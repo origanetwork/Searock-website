@@ -1,5 +1,41 @@
 @import "tailwindcss";
 
+/* Font Face Definitions */
+@font-face {
+  font-family: 'Amsi Pro';
+  src: url('/fonts/amsipro-light-webfont.woff2') format('woff2'),
+       url('/fonts/amsipro-light-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Amsi Pro Condensed 400';
+  src: url('/fonts/amsiprocond-regular-webfont.woff2') format('woff2'),
+       url('/fonts/amsiprocond-regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Amsi Pro Condensed 600';
+  src: url('/fonts/amsiprocond-semibold-webfont.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Amsi Pro Condensed 700';
+  src: url('/fonts/amsiprocond-bold-webfont.woff2') format('woff2'),
+       url('/fonts/amsiprocond-bold-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* 1) Theme variables (Tailwind v4) */
 @layer theme {
   @theme {
@@ -12,6 +48,13 @@
     /* App surfaces */
     --color-background: #FFFFFF;
     --color-foreground: #0A0A0A;
+    
+    /* Font families */
+    --font-family-amsi: 'Amsi Pro';
+    --font-family-amsi-cond: 'Amsi Pro Condensed';
+    --font-family-amsi-cond-400: 'Amsi Pro Condensed 400';
+    --font-family-amsi-cond-600: 'Amsi Pro Condensed 600';
+    --font-family-amsi-cond-700: 'Amsi Pro Condensed 700';
   }
 }
 
