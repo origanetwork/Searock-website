@@ -167,7 +167,7 @@ const TestimonialsSection: React.FC = () => {
   const testimonial: Testimonial = {
     id: 1,
     name: 'Mohamed Firoz',
-    avatar: '/images/testimonials/mohamed-firoz.jpg', // Replace with actual image path
+    avatar: `https://picsum.photos/seed/${Math.floor(Math.random() * 1000)}/200/300`, // Use a random avatar image from randomimages web
     text: '"It was wonderful experience shopping with SEAROCK. Wide range of collections with very reasonable rate. I really appreciate your staff for their continuous support and advices till my work ends. Totally impressed on your service. Thank You"',
   };
 
