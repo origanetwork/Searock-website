@@ -1,5 +1,6 @@
 'use client';
 
+import clsx from 'clsx';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
@@ -39,7 +40,7 @@ const Navbar = () => {
           {/* Logo: centered, larger size */}
           <a href="/" className="flex items-center justify-start" aria-label="Searock Home">
             <Image
-              src="/landing-page/home/searock-logo.png"
+              src="/images/home/searock-logo.png"
               alt="Searock"
               width={320}
               height={80}
@@ -93,7 +94,9 @@ const Navbar = () => {
                   href={link.href}
                   onClick={() => setOpen(false)}
                   role="menuitem"
-                  className="flex items-center gap-3 rounded-xl px-4 py-3 text-lg font-medium font-family-amsi-cond-600 text-slate-800 transition-colors hover:bg-slate-100 focus:bg-slate-100 focus:outline-none"
+                  className={clsx("flex items-center gap-3 rounded-xl px-4 py-3 text-lg font-medium font-family-amsi-cond-600 transition-colors hover:bg-slate-100 focus:bg-slate-100 focus:outline-none", 
+                   `${idx === 0 ? 'font-bold text-secondary' : 'text-slate-600'}`,
+                  )}
                 >
                   {link.name}
                 </a>

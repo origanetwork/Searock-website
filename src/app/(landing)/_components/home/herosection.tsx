@@ -30,7 +30,7 @@ const HeroSection: React.FC = () => {
           {/* "Bring life" line - Uses primary color (#3C3063) */}
           <span 
             className={clsx(
-              "font-family-amsi-cond-400 text-5xl font-bold leading-tight tracking-normal",
+              "font-family-amsi-cond-700 text-5xl font-extrabold leading-tight tracking-normal",
               "text-primary",
               "sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
             )}
@@ -42,7 +42,7 @@ const HeroSection: React.FC = () => {
           {/* "to your home" line - Also in primary color */}
           <span 
             className={clsx(
-              "font-family-amsi-cond-400 text-5xl font-bold leading-tight tracking-normal",
+              "font-family-amsi-cond-700 text-5xl font-extrabold leading-tight tracking-normal",
               "text-primary ",
               "sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
             )}

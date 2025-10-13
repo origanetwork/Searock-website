@@ -26,7 +26,7 @@ const HeroAbout: React.FC = () => (
         {/* Background Image - Optimized with next/image for performance */}
         <div className="absolute inset-0 z-0">
             <Image
-                src="/images/home/heroAboutbg.png"
+                src="/images/home/heroAboutbg.webp"
                 alt="Textured background pattern"
                 fill
                 quality={85}

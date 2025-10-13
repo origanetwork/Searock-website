@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useMemo } from 'react';
 import { clsx } from 'clsx';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -21,7 +21,8 @@ if (typeof window !== 'undefined') {
  * - Counter animation with easing
  * - Mobile-first responsive grid layout
  * - Accessible semantic HTML
- * - Performance-optimized animations
+ * - Performance-optimized animations with GPU acceleration
+ * - Reduced motion support for accessibility
  */
 
 interface StatCardProps {
@@ -31,25 +32,30 @@ interface StatCardProps {
   index: number;
 }
 
+// Helper function to determine border radius based on card position
+// Moved outside component to prevent recreation on every render
+const getBorderRadius = (index: number): string => {
+  switch (index) {
+    case 0:
+      return 'rounded-br-4xl';
+    case 1:
+      return 'rounded-bl-4xl';
+    case 2:
+      return 'rounded-tr-4xl';
+    case 3:
+      return 'rounded-tl-4xl';
+    default:
+      return 'rounded-4xl';
+  }
+};
+
 const StatCard: React.FC<StatCardProps> = ({ value, suffix, label, index }) => {
   const numberRef = useRef<HTMLSpanElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
+  const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
 
-  // Helper function to determine border radius based on card position
-  const getBorderRadius = (index: number): string => {
-    switch (index) {
-      case 0:
-        return 'rounded-br-4xl';
-      case 1:
-        return 'rounded-bl-4xl';
-      case 2:
-        return 'rounded-tr-4xl';
-      case 3:
-        return 'rounded-tl-4xl';
-      default:
-        return 'rounded-4xl';
-    }
-  };
+  // Memoize border radius class to prevent recalculation
+  const borderRadiusClass = useMemo(() => getBorderRadius(index), [index]);
 
   useEffect(() => {
     const numberElement = numberRef.current;
@@ -57,25 +63,40 @@ const StatCard: React.FC<StatCardProps> = ({ value, suffix, label, index }) => {
 
     if (!numberElement || !cardElement) return;
 
+    // Check for reduced motion preference (accessibility)
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      // Skip animations for users who prefer reduced motion
+      numberElement.textContent = value.toString();
+      return;
+    }
+
     // Create GSAP timeline for card animation
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: cardElement,
         start: 'top 80%', // Start animation when card is 80% in viewport
         toggleActions: 'play none none none', // Play once
+        onEnter: () => {
+          // Store reference to this specific ScrollTrigger
+          scrollTriggerRef.current = ScrollTrigger.getById(cardElement.id) || null;
+        },
       },
     });
 
     // Animate card entrance with fade and slide up
+    // Using transform for GPU acceleration
     tl.from(cardElement, {
       opacity: 0,
       y: 50,
       duration: 0.6,
       ease: 'power3.out',
       delay: index * 0.1, // Stagger animation for each card
+      force3D: true, // Force GPU acceleration
     });
 
-    // Animate number counter
+    // Animate number counter with optimized DOM updates
     tl.to(
       { value: 0 },
       {
@@ -85,16 +106,22 @@ const StatCard: React.FC<StatCardProps> = ({ value, suffix, label, index }) => {
         onUpdate: function () {
           const currentValue = Math.floor(this.targets()[0].value);
           if (numberElement) {
-            numberElement.textContent = currentValue.toString();
+            // Use requestAnimationFrame for smoother DOM updates
+            requestAnimationFrame(() => {
+              numberElement.textContent = currentValue.toString();
+            });
           }
         },
       },
       '-=0.3' // Start counter slightly before card animation ends
     );
 
-    // Cleanup ScrollTrigger on unmount
+    // Cleanup: Kill only THIS component's ScrollTrigger
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      if (scrollTriggerRef.current) {
+        scrollTriggerRef.current.kill();
+      }
+      tl.kill(); // Also kill the timeline
     };
   }, [value, index]);
 
@@ -102,11 +129,16 @@ const StatCard: React.FC<StatCardProps> = ({ value, suffix, label, index }) => {
     <div
       ref={cardRef}
       className={clsx(
-        'flex flex-col items-center justify-center bg-white border border-gray-200 p-8 shadow-2xl backdrop-blur-3xl transition-transform duration-300',
-        'hover:scale-105 hover:shadow-xl',
+        'flex flex-col items-center justify-center bg-white/95 border border-gray-200 p-8 shadow-2xl transition-transform duration-300',
+        'will-change-transform', // Hint GPU acceleration for transforms
+        'md:hover:scale-105 md:hover:shadow-xl', // Hover only on desktop (not touch devices)
         'sm:p-10 md:p-12 lg:p-14',
-        getBorderRadius(index)
+        borderRadiusClass
       )}
+      style={{
+        // Use transform3d to force GPU acceleration
+        transform: 'translate3d(0, 0, 0)',
+      }}
     >
       {/* Animated Number */}
       <div className="mb-4 flex items-baseline">
@@ -177,7 +209,7 @@ const StatsSection: React.FC = () => {
         </h2>
 
         {/* Stats Grid - 2 column layout */}
-        <div className="grid grid-cols-2 gap-3 px-2 mb-10 sm:gap-6 md:gap-8 lg:gap-10">
+        <div className="grid grid-cols-2 gap-3 px-2 my-10 sm:gap-6 md:gap-8 lg:gap-10">
           {stats.map((stat, index) => (
             <StatCard
               key={index}
