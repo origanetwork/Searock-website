@@ -240,7 +240,7 @@ const TestimonialsSection: React.FC = () => {
               'sm:text-xl md:text-2xl lg:text-3xl'
             )}
           >
-            Hear from those who've transformed their spaces with Searock.
+            Hear from those who&apos;ve transformed their spaces with Searock.
           </p>
         </div>
 

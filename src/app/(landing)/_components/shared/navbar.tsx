@@ -2,6 +2,7 @@
 
 import clsx from 'clsx';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
 const NAV_LINKS = [
@@ -38,7 +39,7 @@ const Navbar = () => {
       <header className="sticky -top-5 z-40 bg-white">
         <nav className="relative mx-auto flex h-25 max-w-screen-xl items-end justify-between px-4">
           {/* Logo: centered, larger size */}
-          <a href="/" className="flex items-center justify-start" aria-label="Searock Home">
+          <Link href="/" className="flex items-center justify-start" aria-label="Searock Home">
             <Image
               src="/images/home/searock-logo.png"
               alt="Searock"
@@ -48,7 +49,7 @@ const Navbar = () => {
               sizes="(max-width: 768px) 620px, 500px"
               className="h-auto w-62"
             />
-          </a>
+          </Link>
 
           {/* Hamburger button (mobile-first) - positioned absolute right */}
           <button

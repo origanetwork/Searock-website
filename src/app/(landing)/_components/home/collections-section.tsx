@@ -47,7 +47,6 @@ const CollectionCard: React.FC<CollectionCardProps> = ({
   description,
   images,
   ctaText = 'Explore More',
-  ctaHref = '#'
 }) => {
   return (
     <div className="w-full">
