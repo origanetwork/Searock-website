@@ -49,6 +49,17 @@ const socialLinks = [
       </svg>
     ),
   },
+  {
+    name: 'Instagram',
+    href: 'https://www.instagram.com/searocktilegallery',
+    icon: (
+      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+      </svg>
+    ),
+  },
 ];
 
 const menuLinks = [
@@ -58,9 +69,10 @@ const menuLinks = [
 ];
 
 const quickLinks = [
-  { name: 'Lorem Ipsum', href: '#' },
-  { name: 'Lorem Ipsum', href: '#' },
-  { name: 'Lorem Ipsum', href: '#' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Products', href: '/products' },
+  { name: 'Solutions', href: '/solutions' },
+
 ];
 
 export default function Footer() {
@@ -73,7 +85,7 @@ export default function Footer() {
         Footer
       </h2>
 
-      <div className="mx-auto max-w-md space-y-8 lg:max-w-7xl">
+      <div className="mx-auto max-w-md space-y-8 md:max-w-3xl lg:max-w-5xl">
         {/* Logo and Social Media */}
         <div className="flex flex-col items-start space-y-2">
           {/* Logo */}
@@ -85,16 +97,16 @@ export default function Footer() {
               height={80}
               priority
               sizes="(max-width: 768px) 620px, 500px"
-              className="h-auto w-62"
+              className="h-auto w-[180px] md:w-[220px]"
             />
           </div>
 
           {/* Social Media Links */}
-          <div className="flex items-center justify-between gap-7">
-            <p className="mx-auto text-center font-[family-name:var(--font-family-amsi-cond-600)] text-2xl uppercase tracking-wide sm:text-base">
+          <div className="flex items-center justify-center gap-4 md:justify-start md:gap-6">
+            <p className="mx-auto md:mx-0 text-center md:text-left font-[family-name:var(--font-family-amsi-cond-600)] text-2xl uppercase tracking-wide sm:text-base">
               Follow Us
             </p>
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex items-center justify-center gap-3 md:justify-start md:gap-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
@@ -112,7 +124,7 @@ export default function Footer() {
         </div>
 
         {/* Menu and Quick Links */}
-        <div className="grid grid-cols-2 gap-8 border-t border-white/20 pt-8 sm:gap-12">
+        <div className="grid grid-cols-1 gap-8 border-t border-white/20 pt-8 sm:grid-cols-2 lg:grid-cols-3 sm:gap-12">
           {/* Menu */}
           <div>
             <h4 className="mb-4 font-[family-name:var(--font-family-amsi-cond-700)] text-base font-bold uppercase tracking-wide sm:text-lg">
@@ -150,12 +162,56 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+          <div>
+            <h4 className="mb-4 font-[family-name:var(--font-family-amsi-cond-700)] text-base font-bold uppercase tracking-wide sm:text-lg">
+              Contact
+            </h4>
+            <ul className="space-y-3" role="list">
+              <li>
+                <div className="flex items-start gap-3 text-white/80">
+                  <svg className="mt-1 h-5 w-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <p className="font-[family-name:var(--font-family-amsi-cond-400)] text-sm sm:text-base">
+                    Panambi, Near EMS Hospital,
+                    <br />
+                    Perinthalmanna, Kerala -679332.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a
+                  href="tel:+916238811940"
+                  className="flex items-center gap-3 font-[family-name:var(--font-family-amsi-cond-400)] text-sm text-white/80 transition-colors hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary sm:text-base"
+                >
+                  <svg className="h-5 w-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.86.33 1.7.62 2.5a2 2 0 0 1-.45 2.11L8 9a16 16 0 0 0 7 7l.67-1.28a2 2 0 0 1 2.11-.45c.8.29 1.64.5 2.5.62A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  +91 6238811940
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:searocktilegallery@gmail.com"
+                  className="flex items-center gap-3 font-[family-name:var(--font-family-amsi-cond-400)] text-sm text-white/80 transition-colors hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary sm:text-base"
+                >
+                  <svg className="h-5 w-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                    <polyline points="22 6 12 13 2 6"></polyline>
+                  </svg>
+                  searocktilegallery@gmail.com
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
         {/* Copyright */}
         <div className="border-t border-white/20 pt-6 text-center">
           <p className="font-[family-name:var(--font-family-amsi-cond-400)] text-xs text-white/60 sm:text-sm">
-            @2025searock
+            @ 2025 Searock , All  rights  reserved
+       Design & Developed by <a href="https://www.origanetworks.com/" className='text-lg transition-colors hover:text-orange-400'> Origa Networks</a>
           </p>
         </div>
       </div>

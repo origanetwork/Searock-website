@@ -17,12 +17,14 @@ import { cn } from '@/lib/utils';
 
 interface FormData {
   name: string;
+  email: string;
   phone: string;
   message: string;
 }
 
 interface FormErrors {
   name?: string;
+  email?: string;
   phone?: string;
   message?: string;
 }
@@ -30,6 +32,7 @@ interface FormErrors {
 export default function ContactSection() {
   const [formData, setFormData] = useState<FormData>({
     name: '',
+    email: '',
     phone: '',
     message: '',
   });
@@ -50,6 +53,12 @@ export default function ContactSection() {
       newErrors.phone = 'Phone number is required';
     } else if (!/^[+]?[\d\s-()]+$/.test(formData.phone)) {
       newErrors.phone = 'Invalid phone number';
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      newErrors.email = 'Invalid email address';
     }
     
     if (!formData.message.trim()) {
@@ -73,7 +82,7 @@ export default function ContactSection() {
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       setSubmitSuccess(true);
-      setFormData({ name: '', phone: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', message: '' });
       
       setTimeout(() => setSubmitSuccess(false), 3000);
     } catch (error) {
@@ -85,19 +94,64 @@ export default function ContactSection() {
 
   return (
     <section
-      className="w-full px-4 py-12 sm:px-6 lg:px-8"
+      className="w-full px-4 pt-12 pb-6 sm:px-6 lg:px-8"
       aria-labelledby="contact-heading"
     >
-      <div className="mx-auto max-w-2xl lg:max-w-7xl">
-        {/* Contact Form */}
-        <div className="mx-auto max-w-md">
-          <h2
-            id="contact-heading"
-            className="mb-8 text-center font-[family-name:var(--font-family-amsi-cond-700)] text-3xl font-bold uppercase tracking-wide text-white sm:text-3xl"
-          >
-            Contact Us
-          </h2>
+      <div className="mx-auto max-w-screen-xl">
+        <div className="lg:grid lg:grid-cols-2 lg:gap-10">
+          {/* Left: Contact Details Cards */}
+          <div className="w-full max-w-md space-y-4 lg:max-w-none">
+            <h2 id="contact-heading" className="mt-[15px] font-[family-name:var(--font-family-amsi-cond-700)] text-2xl text-orange-400  sm:text-3xl">Contact</h2>
+            {/* Phone Card */}
+            <div className="flex items-start gap-4 rounded-br-3xl bg-white/95 p-4 shadow-[0_8px_20px_rgba(0,0,0,0.1)] ring-1 ring-black/5">
+              <span className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-primary text-orange-400">
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.86.33 1.7.62 2.5a2 2 0 0 1-.45 2.11L8 9a16 16 0 0 0 7 7l.67-1.28a2 2 0 0 1 2.11-.45c.8.29 1.64.5 2.5.62A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
+              <div>
+                <p className="font-[family-name:var(--font-family-amsi-cond-700)] text-slate-900">Phone</p>
+                <a href="tel:+916238811940" className="mt-0.5 block text-slate-700">+91 6238811940</a>
+                <p className="text-xs text-slate-500">Call us for immediate assistance</p>
+              </div>
+            </div>
 
+            {/* Email Card */}
+            <div className="flex items-start gap-4 rounded-br-3xl bg-white/95 p-4 shadow-[0_8px_20px_rgba(0,0,0,0.1)] ring-1 ring-black/5">
+              <span className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-primary text-orange-400">
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+              </span>
+              <div>
+                <p className="font-[family-name:var(--font-family-amsi-cond-700)] text-slate-900">Email</p>
+                <a href="mailto:searocktilegallery@gmail.com" className="mt-0.5 block text-slate-700">searocktilegallery@gmail.com</a>
+                <p className="text-xs text-slate-500">Send us your inquiries anytime</p>
+              </div>
+            </div>
+
+            {/* Location Card */}
+            <div className="flex items-start gap-4 rounded-br-3xl bg-white/95 p-4 shadow-[0_8px_20px_rgba(0,0,0,0.1)] ring-1 ring-black/5">
+              <span className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-primary text-orange-400">
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <div>
+                <p className="font-[family-name:var(--font-family-amsi-cond-700)] text-slate-900">Store Location</p>
+                <p className="mt-0.5 text-slate-700">Panambi, Near EMS Hospital, Perinthalmanna, Kerala -679332</p>
+              </div>
+            </div>
+
+            {/* Business Hours Card */}
+            <div className="flex items-start gap-4 rounded-br-3xl bg-white/95 p-4 shadow-[0_8px_20px_rgba(0,0,0,0.1)] ring-1 ring-black/5">
+              <span className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-primary text-orange-400">
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </span>
+              <div>
+                <p className="font-[family-name:var(--font-family-amsi-cond-700)] text-slate-900">Business Hours</p>
+                <p className="mt-0.5 text-slate-700">Mon - Sun: 9AM - 7PM</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Complaint Form */}
+          <div className="w-full max-w-md lg:max-w-none">
+          <h3 className="mt-[15px] mb-3 sm:mb-4 font-[family-name:var(--font-family-amsi-cond-700)] text-xl text-orange-400 sm:text-2xl">Register a Complaint</h3>
           <form onSubmit={handleSubmit} className="space-y-4" noValidate>
             {/* Name Input */}
             <div>
@@ -110,7 +164,7 @@ export default function ContactSection() {
                 name="name"
                 value={formData.name}
                 onChange={e => setFormData({ ...formData, name: e.target.value })}
-                placeholder="Name"
+                placeholder="Enter your full name"
                 className={cn(
                   'w-full rounded-br-3xl border-0 bg-[#2A2347] px-4 py-4 font-[family-name:var(--font-family-amsi-cond-400)] text-sm text-white placeholder-gray-400 outline-none transition-all focus:ring-2 focus:ring-secondary sm:text-base',
                   errors.name && 'ring-2 ring-red-500'
@@ -121,6 +175,32 @@ export default function ContactSection() {
               {errors.name && (
                 <p id="name-error" className="mt-1 text-xs text-red-300" role="alert">
                   {errors.name}
+                </p>
+              )}
+            </div>
+
+            {/* Email Input */}
+            <div>
+              <label htmlFor="email" className="sr-only">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={e => setFormData({ ...formData, email: e.target.value })}
+                placeholder="Enter your e-mail id"
+                className={cn(
+                  'w-full rounded-br-3xl border-0 bg-[#2A2347] px-4 py-4 font-[family-name:var(--font-family-amsi-cond-400)] text-sm text-white placeholder-gray-400 outline-none transition-all focus:ring-2 focus:ring-secondary sm:text-base',
+                  errors.email && 'ring-2 ring-red-500'
+                )}
+                aria-invalid={errors.email ? 'true' : 'false'}
+                aria-describedby={errors.email ? 'email-error' : undefined}
+              />
+              {errors.email && (
+                <p id="email-error" className="mt-1 text-xs text-red-300" role="alert">
+                  {errors.email}
                 </p>
               )}
             </div>
@@ -136,7 +216,7 @@ export default function ContactSection() {
                 name="phone"
                 value={formData.phone}
                 onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                placeholder="Phone Number"
+                placeholder="Enter your phone number"
                 className={cn(
                   'w-full rounded-br-3xl border-0 bg-[#2A2347] px-4 py-4 font-[family-name:var(--font-family-amsi-cond-400)] text-sm text-white placeholder-gray-400 outline-none transition-all focus:ring-2 focus:ring-secondary sm:text-base',
                   errors.phone && 'ring-2 ring-red-500'
@@ -161,7 +241,7 @@ export default function ContactSection() {
                 name="message"
                 value={formData.message}
                 onChange={e => setFormData({ ...formData, message: e.target.value })}
-                placeholder="Message"
+                placeholder="Please describe your complaint in detail..."
                 rows={4}
                 className={cn(
                   'w-full resize-none rounded-br-3xl border-0 bg-[#2A2347] px-4 py-3 font-[family-name:var(--font-family-amsi-cond-400)] text-md text-white placeholder-gray-400 outline-none transition-all focus:ring-2 focus:ring-secondary sm:text-base',
@@ -190,99 +270,6 @@ export default function ContactSection() {
               {isSubmitting ? 'Submitting...' : submitSuccess ? 'Sent!' : 'Submit'}
             </button>
           </form>
-
-          {/* Google Maps Embed */}
-          <div className="mt-6 overflow-hidden shadow-lg">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14467.199615625987!2d76.23768555892087!3d10.970625652041782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7cd21b11d5611%3A0x6f07d77d5f4aea6a!2sSearock%20Tile%20Gallery!5e0!3m2!1sen!2sin!4v1760172765876!5m2!1sen!2sin"
-              height="280"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Searock Tile Gallery Location"
-              className="w-full  rounded-br-3xl"
-            />
-          </div>
-
-          {/* Contact Information */}
-          <div className="mt-6 space-y-4">
-            {/* Address */}
-            <div className="flex items-start gap-3 text-white">
-              <svg
-                className="mt-0.5 h-5 w-5 flex-shrink-0 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
-              <p className="font-[family-name:var(--font-family-amsi-cond-400)] text-md leading-relaxed sm:text-base">
-                Panambi, Near EMS Hospital,
-                <br />
-                Perinthalmanna, Kerala -679332.
-              </p>
-            </div>
-
-            {/* Phone */}
-            <a
-              href="tel:+916238811940"
-              className="flex items-center gap-3 text-white transition-colors hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary"
-            >
-              <svg
-                className="h-5 w-5 flex-shrink-0"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                />
-              </svg>
-              <span className="font-[family-name:var(--font-family-amsi-cond-400)] text-md sm:text-base">
-                +91 6238811940
-              </span>
-            </a>
-
-            {/* Email */}
-            <a
-              href="mailto:searocktilegallery@gmail.com"
-              className="flex items-center gap-3 text-white transition-colors hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary"
-            >
-              <svg
-                className="h-5 w-5 flex-shrink-0"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
-              <span className="font-[family-name:var(--font-family-amsi-cond-400)] text-md sm:text-base">
-                searocktilegallery@gmail.com
-              </span>
-            </a>
           </div>
         </div>
       </div>

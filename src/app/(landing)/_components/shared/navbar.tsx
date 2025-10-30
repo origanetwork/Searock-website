@@ -7,9 +7,9 @@ import { useEffect, useRef, useState } from 'react';
 
 const NAV_LINKS = [
   { name: 'Home', href: '/' },
-  { name: 'Products', href: '/products' },
-  { name: 'Solutions', href: '/solutions' },
   { name: 'About', href: '/about' },
+  { name: 'Products', href: '/products' },
+  { name: 'Blogs', href: '/blogs' },
   { name: 'Contact', href: '/contact' }
 ] as const;
 
@@ -36,8 +36,8 @@ const Navbar = () => {
   return (
     <>
       {/* Sticky header */}
-      <header className="sticky -top-5 z-40 bg-white">
-        <nav className="relative mx-auto flex h-25 max-w-screen-xl items-end justify-between px-4">
+      <header className="fixed inset-x-0 top-0 z-50 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+        <nav className="relative mx-auto flex h-16 md:h-20 max-w-screen-xl items-center justify-between px-4">
           {/* Logo: centered, larger size */}
           <Link href="/" className="flex items-center justify-start" aria-label="Searock Home">
             <Image
@@ -51,6 +51,18 @@ const Navbar = () => {
             />
           </Link>
 
+          <div className="hidden md:flex items-center gap-8">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="font-[family-name:var(--font-family-amsi-cond-600)] uppercase tracking-wide text-slate-700 hover:text-secondary text-base lg:text-lg py-2"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+
           {/* Hamburger button (mobile-first) - positioned absolute right */}
           <button
             type="button"
@@ -58,7 +70,7 @@ const Navbar = () => {
             aria-expanded={open}
             aria-controls="mobile-popover"
             onClick={() => setOpen(!open)}
-            className="absolute bottom-6 right-4 inline-flex flex-col items-start justify-center gap-1.5 rounded-md p-2 text-slate-700 transition hover:bg-slate-100 active:bg-slate-200"
+            className="absolute right-4 top-1/2 -translate-y-1/2 inline-flex flex-col items-start justify-center gap-1.5 rounded-md p-2 text-slate-700 transition hover:bg-slate-100 active:bg-slate-200 md:hidden"
           >
             <span className="block h-0.5 w-7 rounded-lg bg-slate-800" />
             <span className="block h-0.5 w-4 rounded-lg bg-slate-800" />
@@ -67,10 +79,12 @@ const Navbar = () => {
         </nav>
       </header>
 
+      <div className="h-16 md:h-20" />
+
       {/* Backdrop overlay - subtle, click to close */}
       {open && (
         <div
-          className="fixed inset-0 z-40"
+          className="fixed inset-0 z-40 md:hidden"
           onClick={() => setOpen(false)}
           aria-hidden="true"
         />
@@ -80,7 +94,7 @@ const Navbar = () => {
       <div
         id="mobile-popover"
         role="menu"
-        className={`fixed right-4 top-24 z-50 w-50 origin-top-right rounded-2xl bg-white p-2 shadow-2xl ring-1 ring-black/5 transition-all duration-200 ease-out ${
+        className={`fixed right-4 top-16 z-50 w-50 origin-top-right rounded-2xl bg-white p-2 shadow-2xl ring-1 ring-black/5 transition-all duration-200 ease-out md:hidden ${
           open
             ? 'pointer-events-auto scale-100 opacity-100'
             : 'pointer-events-none scale-95 opacity-0'

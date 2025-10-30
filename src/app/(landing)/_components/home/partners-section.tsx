@@ -42,12 +42,12 @@ const PartnersSection: React.FC = () => {
   // Partner logos data - placeholder logos (replace with actual partner logos)
   const partners: PartnerLogo[] = [
     {
-      src: '/images/partners/somany.png',
+      src: '/images/partners/haique.png',
       alt: 'IPSUM partner logo',
       name: 'IPSUM',
     },
     {
-      src: '/images/partners/RAK.png',
+      src: '/images/partners/kajaria.png',
       alt: 'Partner 2 logo',
       name: 'Partner 2',
     },
@@ -67,7 +67,7 @@ const PartnersSection: React.FC = () => {
       name: 'IPSUM',
     },
     {
-      src: '/images/partners/mapai.png',
+      src: '/images/partners/varmora.png',
       alt: 'Logoipsum partner logo',
       name: 'Logoipsum',
     },

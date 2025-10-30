@@ -80,3 +80,57 @@
     color: var(--color-foreground);
   }
 }
+
+/* Modal visibility utility */
+.modal { display: none; }
+.modal:target { display: flex; }
+
+/* Collapse utility (for Read More Blogs) */
+.collapse { display: none; }
+.collapse:target { display: block; }
+
+/* Simple animation utilities */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.anim-fadeInUp-800 { animation: fadeInUp 800ms ease-out both; will-change: opacity, transform; }
+.anim-fadeInUp-1000-200 { animation: fadeInUp 1000ms ease-out 200ms both; will-change: opacity, transform; }
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-fadeInUp-800,
+  .anim-fadeInUp-1000-200 { animation: none; }
+}
+
+/* Three-slide carousel (3s each, 9s total loop) */
+.carousel { position: relative; }
+.carousel-slide { opacity: 0; animation: none; will-change: opacity; }
+.carousel .is-first { animation: threeSlideFirst 9s ease-in-out infinite; }
+.carousel .is-second { animation: threeSlideSecond 9s ease-in-out infinite; }
+.carousel .is-third { animation: threeSlideThird 9s ease-in-out infinite; }
+
+@keyframes threeSlideFirst {
+  0% { opacity: 1; }
+  30% { opacity: 1; }
+  33.33% { opacity: 0; }
+  96% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes threeSlideSecond {
+  0% { opacity: 0; }
+  33.33% { opacity: 0; }
+  36.66% { opacity: 1; }
+  63.33% { opacity: 1; }
+  66.66% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes threeSlideThird {
+  0% { opacity: 0; }
+  66.66% { opacity: 0; }
+  69.99% { opacity: 1; }
+  96% { opacity: 1; }
+  100% { opacity: 0; }
+}

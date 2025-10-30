@@ -5,7 +5,7 @@ import { clsx } from 'clsx';
 const HeroSection: React.FC = () => {
   return (
     <section 
-      className="relative flex min-h-[calc(100svh-7rem)] w-full  overflow-hidden"
+      className="relative flex min-h-[calc(100svh-7rem)] w-full items-center justify-center overflow-hidden"
       aria-label="Hero section"
     >
       {/* Background Image with Overlay - Optimized with next/image */}
@@ -23,10 +23,10 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* Content Container - Centered with responsive padding */}
-      <div className="relative z-10 flex w-full max-w-7xl flex-col px-4 py-5 text-center sm:px-6 md:px-8 lg:py-16">
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-4 py-5 text-center sm:px-6 md:px-8 lg:py-16">
         
         {/* Main Headline - Split into two lines for visual impact */}
-        <h1 className="mb-6 flex flex-col gap-1 md:mb-8 lg:mb-10 justify-start items-center">
+        <h1 className="mb-6 flex flex-col gap-1 md:mb-8 lg:mb-10 justify-center items-center">
           {/* "Bring life" line - Uses primary color (#3C3063) */}
           <span 
             className={clsx(
@@ -56,8 +56,7 @@ const HeroSection: React.FC = () => {
         <p 
           className={clsx(
             "mb-2 text-3xl font-semibold leading-relaxed tracking-wide",
-            "sm:text-3xl md:mb-5 md:text-4xl lg:mb-12 lg:text-5xl",
-            "my-auto"
+            "sm:text-3xl md:mb-5 md:text-4xl lg:mb-12 lg:text-5xl"
           )}
         >
           <span 
