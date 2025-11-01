@@ -31,7 +31,7 @@ export default function ContactPage() {
           >
             Our Location
           </h2>
-          <div className="overflow-hidden rounded-br-[4rem] shadow-2xl ring-1 ring-black/5 md:-mx-[20px]">
+          <div className="overflow-hidden rounded-bl-[4rem] shadow-2xl ring-1 ring-black/5 md:-mx-[20px]">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14467.199615625987!2d76.23768555892087!3d10.970625652041782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7cd21b11d5611%3A0x6f07d77d5f4aea6a!2sSearock%20Tile%20Gallery!5e0!3m2!1sen!2sin!4v1760172765876!5m2!1sen!2sin"
               title="Searock Tile Gallery Location - Large Map"

@@ -1,6 +1,6 @@
-
 import Navbar from "./_components/shared/navbar";
 import CustomFooter from "./_components/shared/custom-footer";
+import WhatsAppFab from "./_components/shared/whatsapp-fab";
 
 export default function LandingLayout({
   children,
@@ -12,6 +12,7 @@ export default function LandingLayout({
       <Navbar />
       {children}
       <CustomFooter />
+      <WhatsAppFab />
     </>
   );
 }

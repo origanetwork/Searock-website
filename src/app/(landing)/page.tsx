@@ -5,6 +5,7 @@ import HeroStory from "./_components/home/hero-story";
 import CollectionsSection from "./_components/home/collections-section";
 import PartnersSection from "./_components/home/partners-section";
 import TestimonialsSection from "./_components/home/testimonials-section";
+import HomeContact from "./_components/shared/home-contact";
 
 // Dynamic import for below-the-fold content
 // This reduces initial bundle size and improves Time to Interactive (TTI)
@@ -43,6 +44,7 @@ export default function LandingPage() {
       <CollectionsSection />
       <PartnersSection />
       <TestimonialsSection />
+      <HomeContact />
     </>
   );
 }

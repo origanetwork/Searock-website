@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { clsx } from 'clsx';
 import { gsap } from 'gsap';
@@ -162,14 +162,51 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
  */
 const TestimonialsSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const [current, setCurrent] = useState(0);
 
-  // Testimonial data - can be extended to array for multiple testimonials
-  const testimonial: Testimonial = {
+  // Testimonial data - array to support multiple testimonials
+const testimonials: Testimonial[] = [
+  {
     id: 1,
-    name: 'Mohamed Firoz',
-    avatar: `https://picsum.photos/seed/${Math.floor(Math.random() * 1000)}/200/300`, // Use a random avatar image from randomimages web
-    text: '"It was wonderful experience shopping with SEAROCK. Wide range of collections with very reasonable rate. I really appreciate your staff for their continuous support and advices till my work ends. Totally impressed on your service. Thank You"',
-  };
+    name: 'Ameen Faisal',
+    avatar: '/images/testimonials/t5.png',
+    text: '"It was a wonderful experience shopping with SEAROCK. Wide range of tile collections at very reasonable rates. I really appreciate your staff for their continuous support and advice until my project was completed. Totally impressed with your service. Thank you!"',
+  },
+  {
+    id: 2,
+    name: 'Ambili Jayan.',
+    avatar: '/images/testimonials/t1.png',
+    text: '"Excellent quality granite and professional service! The team was helpful, timely, and delivered exactly what we wanted. Highly recommended.!"',
+  },
+  {
+    id: 3,
+    name: 'Mohamed Firoz.',
+    avatar: '/images/testimonials/t2.png',
+    text: '"I was amazed by the huge collection and reasonable prices. The team guided me throughout the selection process, making it very easy to finalize my home renovation. Great service and quality tiles!"',
+  },
+  {
+    id: 4,
+    name: 'Muhammed Musthafa.',
+    avatar: '/images/testimonials/t3.png',
+    text: '"Professional and friendly staff! They understood exactly what I wanted and helped me pick modern tiles that matched my interior perfectly. I’ll definitely recommend SEAROCK to my friends and family."',
+  },
+  {
+    id: 5,
+    name: 'Ruksinis HEAVEN',
+    avatar: '/images/testimonials/t4.png',
+    text: '"Excellent service and premium quality tiles! The designs are unique, and the staff’s knowledge about materials and installation made my decision so much easier. Very satisfied with my purchase."',
+  },
+];
+
+
+  // Auto-rotate testimonials
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+    }, 5000); // Change testimonial every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
 
   useEffect(() => {
     const sectionElement = sectionRef.current;
@@ -244,8 +281,10 @@ const TestimonialsSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Testimonial Card */}
-        <TestimonialCard testimonial={testimonial} />
+        {/* Testimonial Carousel */}
+        <div className="mx-auto max-w-4xl">
+          <TestimonialCard testimonial={testimonials[current]} />
+        </div>
       </div>
     </section>
   );

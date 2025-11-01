@@ -1,8 +1,48 @@
 import Image from 'next/image';
 
 export const metadata = {
-  title: 'Blogs • Searock',
-  description: 'Insights, tips, and inspiration for your projects.'
+  title: 'Tile Design & Installation Tips • Searock Tile Gallery Blogs',
+  description:
+    'Explore expert tile installation guides, design inspiration, and product care tips from Searock Tile Gallery — Kerala’s trusted destination for premium tiles, sanitaryware, and bathware.',
+  keywords: [
+    'tile shop Kerala',
+    'tile installation guide',
+    'bathroom tile ideas',
+    'floor tiles trends',
+    'wall tiles design',
+    'porcelain tiles vs natural stone',
+    'grout maintenance tips',
+    'Searock Tile Gallery blogs',
+    'modern tile designs India',
+    'kitchen flooring tiles'
+  ],
+  openGraph: {
+    title: 'Searock Tile Gallery Blogs — Tile Design & Installation Ideas',
+    description:
+      'Discover the latest tile design trends, installation tutorials, and care tips from Searock Tile Gallery, Kerala’s leading tile and bathware showroom.',
+    url: 'https://www.searocktilegallery.com/blogs',
+    siteName: 'Searock Tile Gallery',
+    images: [
+      {
+        url: '/images/og/blogs-banner.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Searock Tile Gallery Blogs - Tile Design & Installation Tips',
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Searock Tile Gallery Blogs — Expert Tile Design & Installation Tips',
+    description:
+      'Your go-to source for tile trends, installation guides, and maintenance insights from Kerala’s Searock Tile Gallery.',
+    images: ['/images/og/blogs-banner.jpg'],
+  },
+  alternates: {
+    canonical: 'https://www.searocktilegallery.com/blogs',
+  },
 };
 
 type BlogPost = {
@@ -187,7 +227,7 @@ export default function BlogsPage() {
             ))}
           </div>
 
-          {/* Peer toggle for more blogs (no JS) */}
+          {/* Peer toggle for more blogs */}
           <input id="show-more-blogs" type="checkbox" className="peer sr-only" />
           <div className="mt-8 flex justify-center peer-checked:hidden">
             <label htmlFor="show-more-blogs" className="inline-flex cursor-pointer items-center gap-2 rounded-lg bg-primary px-6 py-3 text-white text-sm font-medium hover:bg-[#382b60]">
@@ -210,7 +250,7 @@ export default function BlogsPage() {
         </div>
       </section>
 
-      {/* Blog Modals for Read More */}
+      {/* Blog Modals */}
       {blogPosts.map((post) => (
         <div
           key={post.id}

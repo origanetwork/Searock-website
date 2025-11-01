@@ -45,11 +45,11 @@ const toSlug = (name: string) => name.toLowerCase().replace(/\s+/g, '-');
 // Reusable component for the Product Category Card
 const CategoryCard = ({ category }: { category: ProductCategory }) => (
   // UPDATED: Single-corner radius (bottom-right only) and hover effects
-  <div className="flex flex-col overflow-hidden rounded-br-[4rem] shadow-xl bg-white transition-all duration-300 
+  <div className="flex flex-col overflow-hidden rounded-bl-[4rem] shadow-xl bg-white transition-all duration-300 
                  hover:shadow-2xl hover:scale-[1.02] hover:ring-4 hover:ring-offset-4 hover:ring-primary/50">
 
     {/* Image container for the category banner */}
-    <div className="relative h-64 w-full overflow-hidden rounded-br-[4rem]">
+    <div className="relative h-64 w-full overflow-hidden rounded-bl-[4rem]">
 
       {/* Image translation on hover */}
       <div className="h-full w-full transition-transform duration-500 ease-in-out hover:translate-x-2">
@@ -65,7 +65,7 @@ const CategoryCard = ({ category }: { category: ProductCategory }) => (
 
       {/* Overlay with the category name - it remains static */}
       <div className="absolute inset-0 flex items-end bg-black/30">
-        <h2 className="p-4 font-['Amsi_Pro_Condensed_700'] text-4xl text-white">
+        <h2 className="p-4 ml-4 md:ml-6 font-['Amsi_Pro_Condensed_700'] text-4xl text-white">
           {category.name}
         </h2>
       </div>
@@ -90,7 +90,7 @@ const CategoryCard = ({ category }: { category: ProductCategory }) => (
       {/* Learn More opens modal via anchor target */}
       <a
         href={`#modal-${toSlug(category.name)}`}
-        className="block w-full rounded-lg bg-primary py-3 px-4 text-center font-medium text-white transition-colors duration-200 hover:bg-[#382b60] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+        className="block w-full rounded-bl-xl bg-primary py-3 px-4 text-center font-medium text-white transition-colors duration-200 hover:bg-[#382b60] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
       >
         Learn More
       </a>
@@ -128,7 +128,7 @@ export default function ProductsPage() {
       {/* Guidance at Every Step - Feature Block */}
       <section className="w-full py-10 md:py-16">
         <div className="mx-auto max-w-screen-xl px-6">
-          <div className="border-3 border-orange-500 rounded-br-[3rem] p-6 max-w-2xl mx-auto text-center bg-white">
+          <div className="border-3 border-orange-500 rounded-bl-[3rem] p-6 max-w-2xl mx-auto text-center bg-white">
             {/* 2-slide CSS carousel (3s per slide) */}
             <div className="carousel relative min-h-[170px] md:min-h-[160px]">
               {/* Slide 1 */}
@@ -214,12 +214,12 @@ export default function ProductsPage() {
                 </ul>
 
                 <div className="mt-6 flex gap-3">
-                  <a
+                  {/* <a
                     href={category.link}
                     className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-[#382b60]"
                   >
                     Go to {category.name}
-                  </a>
+                  </a> */}
                   <a
                     href="#"
                     className="inline-flex items-center justify-center rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"

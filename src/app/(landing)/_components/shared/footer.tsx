@@ -69,9 +69,9 @@ const menuLinks = [
 ];
 
 const quickLinks = [
-  { name: 'Blog', href: '/blog' },
+  { name: 'Blog', href: '/blogs' },
   { name: 'Products', href: '/products' },
-  { name: 'Solutions', href: '/solutions' },
+  { name: 'Gallery', href: '/gallery' },
 
 ];
 
@@ -87,9 +87,9 @@ export default function Footer() {
 
       <div className="mx-auto max-w-md space-y-8 md:max-w-3xl lg:max-w-5xl">
         {/* Logo and Social Media */}
-        <div className="flex flex-col items-start space-y-2">
+        <div className="flex flex-col space-y-4 md:flex-row md:items-center md:justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-3">
+          <div className="w-full md:w-auto">
             <Image
               src="/images/home/searock-white.png"
               alt="Searock"
@@ -97,16 +97,16 @@ export default function Footer() {
               height={80}
               priority
               sizes="(max-width: 768px) 620px, 500px"
-              className="h-auto w-[180px] md:w-[220px]"
+              className="mx-auto h-auto w-[180px] md:mx-0 md:w-[220px]"
             />
           </div>
 
           {/* Social Media Links */}
-          <div className="flex items-center justify-center gap-4 md:justify-start md:gap-6">
-            <p className="mx-auto md:mx-0 text-center md:text-left font-[family-name:var(--font-family-amsi-cond-600)] text-2xl uppercase tracking-wide sm:text-base">
+          <div className="flex flex-col items-center space-y-2 md:items-end">
+            <p className="text-center font-[family-name:var(--font-family-amsi-cond-600)] text-2xl uppercase tracking-wide sm:text-base md:text-right">
               Follow Us
             </p>
-            <div className="flex items-center justify-center gap-3 md:justify-start md:gap-4">
+            <div className="flex items-center justify-center gap-3 md:gap-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
@@ -124,9 +124,9 @@ export default function Footer() {
         </div>
 
         {/* Menu and Quick Links */}
-        <div className="grid grid-cols-1 gap-8 border-t border-white/20 pt-8 sm:grid-cols-2 lg:grid-cols-3 sm:gap-12">
+        <div className="grid grid-cols-2 gap-8 border-t border-white/20 pt-8 sm:grid-cols-2 lg:grid-cols-3 sm:gap-12">
           {/* Menu */}
-          <div>
+          <div className="col-span-1">
             <h4 className="mb-4 font-[family-name:var(--font-family-amsi-cond-700)] text-base font-bold uppercase tracking-wide sm:text-lg">
               Menu
             </h4>
@@ -144,8 +144,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Quick Links */}
-          <div>
+          {/* Quick Links - Right aligned on mobile */}
+          <div className="col-span-1 text-right sm:text-left">
             <h4 className="mb-4 font-[family-name:var(--font-family-amsi-cond-700)] text-base font-bold uppercase tracking-wide sm:text-lg">
               Quick Links
             </h4>
@@ -154,7 +154,7 @@ export default function Footer() {
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="font-[family-name:var(--font-family-amsi-cond-400)] text-sm text-white/80 transition-colors hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary sm:text-base"
+                    className="inline-block font-[family-name:var(--font-family-amsi-cond-400)] text-sm text-white/80 transition-colors hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary sm:text-base"
                   >
                     {link.name}
                   </Link>
@@ -162,13 +162,13 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-          <div>
-            <h4 className="mb-4 font-[family-name:var(--font-family-amsi-cond-700)] text-base font-bold uppercase tracking-wide sm:text-lg">
+          <div className="col-span-2 sm:col-span-1 lg:col-span-1">
+            <h4 className="mb-4 text-center font-[family-name:var(--font-family-amsi-cond-700)] text-base font-bold uppercase tracking-wide sm:text-left sm:text-lg">
               Contact
             </h4>
-            <ul className="space-y-3" role="list">
-              <li>
-                <div className="flex items-start gap-3 text-white/80">
+            <ul className="space-y-3 text-center sm:text-left" role="list">
+              <li className="flex flex-col items-center sm:block">
+                <div className="mx-auto flex max-w-[280px] items-start gap-3 text-center text-white/80 sm:max-w-none sm:text-left">
                   <svg className="mt-1 h-5 w-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
@@ -180,10 +180,10 @@ export default function Footer() {
                   </p>
                 </div>
               </li>
-              <li>
+              <li className="flex justify-center sm:justify-start">
                 <a
                   href="tel:+916238811940"
-                  className="flex items-center gap-3 font-[family-name:var(--font-family-amsi-cond-400)] text-sm text-white/80 transition-colors hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary sm:text-base"
+                  className="inline-flex items-center gap-3 font-[family-name:var(--font-family-amsi-cond-400)] text-sm text-white/80 transition-colors hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary sm:text-base"
                 >
                   <svg className="h-5 w-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.86.33 1.7.62 2.5a2 2 0 0 1-.45 2.11L8 9a16 16 0 0 0 7 7l.67-1.28a2 2 0 0 1 2.11-.45c.8.29 1.64.5 2.5.62A2 2 0 0 1 22 16.92z"></path>
@@ -191,10 +191,10 @@ export default function Footer() {
                   +91 6238811940
                 </a>
               </li>
-              <li>
+              <li className="flex justify-center sm:justify-start">
                 <a
                   href="mailto:searocktilegallery@gmail.com"
-                  className="flex items-center gap-3 font-[family-name:var(--font-family-amsi-cond-400)] text-sm text-white/80 transition-colors hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary sm:text-base"
+                  className="inline-flex items-center gap-3 font-[family-name:var(--font-family-amsi-cond-400)] text-sm text-white/80 transition-colors hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary sm:text-base"
                 >
                   <svg className="h-5 w-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
@@ -211,7 +211,7 @@ export default function Footer() {
         <div className="border-t border-white/20 pt-6 text-center">
           <p className="font-[family-name:var(--font-family-amsi-cond-400)] text-xs text-white/60 sm:text-sm">
             @ 2025 Searock , All  rights  reserved
-       Design & Developed by <a href="https://www.origanetworks.com/" className='text-lg transition-colors hover:text-orange-400'> Origa Networks</a>
+       Design & Developed by <a href="https://www.origanetworks.com/" className='text-md transition-colors hover:text-orange-400'> Origa Networks</a>
           </p>
         </div>
       </div>

@@ -1,4 +1,7 @@
 import Image from "next/image";
+import { FaHandshakeAngle } from "react-icons/fa6";
+import { HiOutlineLightBulb } from "react-icons/hi";
+import { TbTargetArrow } from "react-icons/tb";
 
 export const metadata = {
   title: "About • Searock",
@@ -21,7 +24,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-3 items-stretch text-center">
               <div className="flex flex-col">
                 <span className="font-['Amsi_Pro_Condensed_700'] text-3xl md:text-4xl lg:text-5xl leading-none">
-                  <span className="text-orange-400">30</span>
+                  <span className="text-white">30</span>
                   <span className="text-white">+</span>
                 </span>
                 <span className="mt-1 text-[10px] md:text-xs lg:text-sm opacity-80">Years of Experience</span>
@@ -29,7 +32,7 @@ export default function AboutPage() {
               <div className="relative flex flex-col">
                 <span className="absolute left-0 top-1/2 h-6 -translate-y-1/2 border-l border-white/20" />
                 <span className="font-['Amsi_Pro_Condensed_700'] text-3xl md:text-4xl lg:text-5xl leading-none">
-                  <span className="text-orange-400">10k</span>
+                  <span className="text-white">10k</span>
                   <span className="text-white">+</span>
                 </span>
                 <span className="mt-1 text-[10px] md:text-xs lg:text-sm opacity-80">Happy Homes</span>
@@ -37,7 +40,7 @@ export default function AboutPage() {
               </div>
               <div className="flex flex-col">
                 <span className="font-['Amsi_Pro_Condensed_700'] text-3xl md:text-4xl lg:text-5xl leading-none">
-                  <span className="text-orange-400">200</span>
+                  <span className="text-white">200</span>
                   <span className="text-white">+</span>
                 </span>
                 <span className="mt-1 text-[10px] md:text-xs lg:text-sm opacity-80">Product Varieties</span>
@@ -60,12 +63,9 @@ export default function AboutPage() {
         </div>
 
         <div className="mx-auto max-w-screen-sm px-6 py-8 space-y-4 md:max-w-2xl lg:max-w-5xl md:grid md:grid-cols-2 md:gap-6 lg:gap-8 md:space-y-0">
-          <article className="rounded-br-3xl bg-white p-5 shadow-[0_10px_20px_rgba(0,0,0,0.08)]">
+          <article className="rounded-bl-3xl bg-white p-5 shadow-[0_10px_20px_rgba(0,0,0,0.08)]">
             <div className="mx-auto mb-2 flex h-6 w-6 items-center justify-center text-secondary">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-6 w-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3a7 7 0 0 0-7 7c0 2.6 1.3 4.6 3.2 6 .5.4.8 1 .8 1.6V19h6v-1.4c0-.6.3-1.2.8-1.6 1.9-1.4 3.2-3.4 3.2-6a7 7 0 0 0-7-7z"/>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 22h6"/>
-              </svg>
+              <HiOutlineLightBulb  className="h-6 w-6" />
             </div>
             <h2 className="text-center font-['Amsi_Pro_Condensed_700'] text-2xl md:text-3xl lg:text-4xl text-primary">Our Vision</h2>
             <p className="mt-2 text-center text-sm md:text-base lg:text-lg text-slate-700">
@@ -73,12 +73,9 @@ export default function AboutPage() {
             </p>
           </article>
 
-          <article className="rounded-br-3xl bg-white p-5 shadow-[0_10px_20px_rgba(0,0,0,0.08)]">
+          <article className="rounded-bl-3xl bg-white p-5 shadow-[0_10px_20px_rgba(0,0,0,0.08)]">
             <div className="mx-auto mb-2 flex h-6 w-6 items-center justify-center text-secondary">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-6 w-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h12"/>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13 6l6 6-6 6"/>
-              </svg>
+              <TbTargetArrow className="h-6 w-6" />
             </div>
             <h2 className="text-center font-['Amsi_Pro_Condensed_700'] text-2xl md:text-3xl lg:text-4xl text-primary">Our Purpose</h2>
             <p className="mt-2 text-center text-sm md:text-base lg:text-lg text-slate-700">
@@ -86,7 +83,7 @@ export default function AboutPage() {
             </p>
           </article>
 
-          <article className="rounded-br-3xl bg-white p-5 shadow-[0_10px_20px_rgba(0,0,0,0.08)]">
+          <article className="rounded-bl-3xl bg-white p-5 shadow-[0_10px_20px_rgba(0,0,0,0.08)]">
             <div className="mx-auto mb-2 flex h-6 w-6 items-center justify-center text-secondary">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-6 w-6"><path strokeLinecap="round" strokeLinejoin="round" d="M12 17l-5 3 1.9-5.9L4 9l6-.2L12 3l2 5.8 6 .2-4.9 5.1L17 20z"/></svg>
             </div>
@@ -96,13 +93,9 @@ export default function AboutPage() {
             </p>
           </article>
 
-          <article className="rounded-br-3xl bg-white p-5 shadow-[0_10px_20px_rgba(0,0,0,0.08)]">
+          <article className="rounded-bl-3xl bg-white p-5 shadow-[0_10px_20px_rgba(0,0,0,0.08)]">
             <div className="mx-auto mb-2 flex h-6 w-6 items-center justify-center text-secondary">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-6 w-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M7 12l3 3a2 2 0 0 0 2 0l3-3"/>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l4-4"/>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 12l-4-4"/>
-              </svg>
+              <FaHandshakeAngle className="h-6 w-6" />
             </div>
             <h2 className="text-center font-['Amsi_Pro_Condensed_700'] text-2xl md:text-3xl lg:text-4xl text-primary">Our Personality</h2>
             <p className="mt-2 text-center text-sm md:text-base lg:text-lg text-slate-700">

@@ -69,7 +69,7 @@ const HeroStory: React.FC = () => {
                 'bg-gradient-to-br from-[#5F5387] via-primary to-[#3C3063]',
                 'w-full rounded-bl-4xl shadow-lg hover:shadow-xl',
                 'focus:outline-none focus:ring-4 focus:ring-primary/30',
-                'sm:w-auto sm:px-12 sm:py-5 sm:text-xl md:px-16 md:py-6 md:text-2xl'
+                'sm:w-auto sm:px-12 sm:py-5 sm:text-xl md:px-16 md:py-6 md:text-2xl lg:w-96'
               )}
               style={{
                 backgroundColor: 'var(--color-primary)',

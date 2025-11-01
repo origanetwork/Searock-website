@@ -1,4 +1,5 @@
-import React from 'react';
+"use client";
+import React, { useEffect, useState } from "react";
 import Image from 'next/image';
 import { clsx } from 'clsx';
 
@@ -15,7 +16,24 @@ import { clsx } from 'clsx';
  * - Accessibility-compliant semantic HTML
  * - Performance-optimized with proper image loading
  */
-const HeroAbout: React.FC = () => (
+const HeroAbout: React.FC = () => {
+    const slides = [
+        { label: 'Maintenance Support', icon: 'home' },
+        { label: 'Wide Collections', icon: 'layers' },
+        { label: 'Best Prices', icon: 'rupee' },
+        { label: 'Quality Products', icon: 'shield' },
+    ];
+
+    const [current, setCurrent] = useState(0);
+
+    useEffect(() => {
+        const id = setInterval(() => {
+            setCurrent(prev => (prev + 1) % slides.length);
+        }, 2000);
+        return () => clearInterval(id);
+    }, []);
+
+    return (
     <section
         className="relative flex min-h-[calc(75svh)] w-full items-center justify-center overflow-hidden py-16 md:py-20 lg:py-24"
         aria-label="About Searock section"
@@ -63,8 +81,8 @@ const HeroAbout: React.FC = () => (
                 At Searock, we are dedicated to transforming spaces with premium flooring, tiles, granites, and bathware solutions. Blending style, durability, and functionality, our products are crafted to meet the highest standards of design and quality. We focus on helping customers create interiors that reflect elegance, comfort, and lasting value.
             </p>
 
-            {/* Feature Icon with Label - Maintenance Support */}
-            <div className="flex flex-col items-center gap-4 md:gap-6">
+            {/* Feature Icon with Label - Auto-rotating */}
+            <div className="flex flex-col items-center gap-4 md:gap-6 lg:hidden">
 
                 {/* Diamond-shaped Icon Container - Rotated square with rounded corners */}
                 <div
@@ -83,19 +101,59 @@ const HeroAbout: React.FC = () => (
                         className="absolute inset-4 rounded-full border-2 border-dashed border-white/40"
                         style={{ borderStyle: 'dashed' }} />
 
-                    {/* Home Icon - Counter-rotated to appear upright */}
-                    <svg
-                        className="-rotate-45 h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        style={{ color: 'var(--color-secondary)' }} // Orange accent color
-                    >
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-                    </svg>
+                    {/* Icon - Counter-rotated to appear upright (varies by slide) */}
+                    {slides[current].icon === 'home' && (
+                        <svg
+                            className="-rotate-45 h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                            style={{ color: 'var(--color-secondary)' }}
+                        >
+                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                        </svg>
+                    )}
+                    {slides[current].icon === 'rupee' && (
+                        <svg
+                            className="-rotate-45 h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-20 lg:w-20"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                            style={{ color: 'var(--color-secondary)' }}
+                        >
+                            <text x="12" y="16" textAnchor="middle" fontSize="14" fontWeight="700" fill="currentColor">₹</text>
+                        </svg>
+                    )}
+                    {slides[current].icon === 'layers' && (
+                        <svg
+                            className="-rotate-45 h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                            style={{ color: 'var(--color-secondary)' }}
+                        >
+                            <path d="M12 3l9 5-9 5-9-5 9-5z" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M3 12l9 5 9-5" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M3 17l9 5 9-5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                    )}
+                    {slides[current].icon === 'shield' && (
+                        <svg
+                            className="-rotate-45 h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                            style={{ color: 'var(--color-secondary)' }}
+                        >
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                    )}
                 </div>
 
-                {/* Feature Label - "Maintenance Support" */}
+                {/* Feature Label - dynamic */}
                 <p
                     className={clsx(
                         "text-2xl font-semibold tracking-wide",
@@ -103,12 +161,63 @@ const HeroAbout: React.FC = () => (
                         "sm:text-3xl md:text-4xl lg:text-5xl"
                     )}
                     style={{ color: 'var(--color-primary)' }}
+                    aria-live="polite"
                 >
-                    Maintenance Support
+                    {slides[current].label}
                 </p>
+            </div>
+
+            <div className="hidden lg:grid grid-cols-4 items-start justify-items-center gap-20 xl:gap-24">
+                {slides.map((s, i) => (
+                    <div key={i} className="flex flex-col items-center">
+                        <div
+                            className={clsx(
+                                "relative flex h-36 w-36 rotate-45 items-center justify-center overflow-hidden"
+                            )}
+                            style={{ backgroundColor: 'var(--color-primary)', borderRadius: '1rem' }}
+                            aria-hidden="true"
+                        >
+                            <div className="absolute inset-4 rounded-full border-2 border-dashed border-white/40" style={{ borderStyle: 'dashed' }} />
+
+                            {s.icon === 'home' && (
+                                <svg className="-rotate-45 h-14 w-14" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={{ color: 'var(--color-secondary)' }}>
+                                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                                </svg>
+                            )}
+                            {s.icon === 'rupee' && (
+                                <svg className="-rotate-45 h-20 w-20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={{ color: 'var(--color-secondary)' }}>
+                                    <text x="12" y="16" textAnchor="middle" fontSize="14" fontWeight="700" fill="currentColor">₹</text>
+                                </svg>
+                            )}
+                            {s.icon === 'layers' && (
+                                <svg className="-rotate-45 h-14 w-14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={{ color: 'var(--color-secondary)' }}>
+                                    <path d="M12 3l9 5-9 5-9-5 9-5z" strokeLinecap="round" strokeLinejoin="round" />
+                                    <path d="M3 12l9 5 9-5" strokeLinecap="round" strokeLinejoin="round" />
+                                    <path d="M3 17l9 5 9-5" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            )}
+                            {s.icon === 'shield' && (
+                                <svg className="-rotate-45 h-14 w-14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={{ color: 'var(--color-secondary)' }}>
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            )}
+                        </div>
+                        <p
+                            className={clsx(
+                                "mt-8 text-2xl font-semibold tracking-wide whitespace-nowrap",
+                                "font-['Amsi_Pro_Condensed_600']",
+                                "lg:text-3xl"
+                            )}
+                            style={{ color: 'var(--color-primary)' }}
+                        >
+                            {s.label}
+                        </p>
+                    </div>
+                ))}
             </div>
         </div>
     </section>
-);
+    );
+};
 
 export default HeroAbout;

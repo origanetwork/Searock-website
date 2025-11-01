@@ -115,14 +115,14 @@ const CollectionCard: React.FC<CollectionCardProps> = ({
       {/* CTA Button - "Explore More" */}
       <div className="flex justify-center">
         <a
-          href="/about"
+          href="/gallery"
           className={clsx(
             'group inline-flex items-center justify-center gap-3 px-4 py-3 text-lg font-semibold transition-all duration-300',
             "font-['Amsi_Pro_Condensed_600']",
             'bg-gradient-to-br from-[#5F5387] via-primary to-[#3C3063]',
             'w-full rounded-bl-3xl shadow-lg hover:shadow-xl',
             'focus:outline-none focus:ring-4 focus:ring-primary/30',
-            'sm:w-auto sm:px-12 sm:py-5 sm:text-xl md:px-16 md:py-6 md:text-2xl'
+            'sm:w-auto sm:px-12 sm:py-5 sm:text-xl md:px-16 md:py-6 md:text-2xl lg:w-86'
           )}
           style={{
             backgroundColor: 'var(--color-primary)',

@@ -5,7 +5,7 @@ import { clsx } from 'clsx';
 const HeroSection: React.FC = () => {
   return (
     <section 
-      className="relative flex min-h-[calc(100svh-7rem)] w-full items-center justify-center overflow-hidden"
+      className="relative flex w-full items-start sm:items-center justify-center overflow-hidden min-h-[80svh] sm:min-h-screen"
       aria-label="Hero section"
     >
       {/* Background Image with Overlay - Optimized with next/image */}
@@ -16,23 +16,24 @@ const HeroSection: React.FC = () => {
           fill
           priority // Load immediately as it's above the fold
           quality={90}
-          className="object-cover"
+          className="object-cover object-top sm:object-center"
           sizes="100vw" // Full viewport width for hero
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-transparent to-transparent sm:from-transparent" />
       
       </div>
 
       {/* Content Container - Centered with responsive padding */}
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-4 py-5 text-center sm:px-6 md:px-8 lg:py-16">
+      <div className="z-10 mx-auto flex w-full max-w-xl flex-col items-center justify-center px-4 pt-2 pb-12 text-center sm:max-w-2xl sm:px-6 sm:pt-12 md:px-8 lg:pt-16 lg:pb-20">
         
         {/* Main Headline - Split into two lines for visual impact */}
-        <h1 className="mb-6 flex flex-col gap-1 md:mb-8 lg:mb-10 justify-center items-center">
+        <h1 className="mb-2 mt-5 sm:mt-0 flex flex-col gap-0.5 md:mb-8 lg:mb-10 justify-center items-center">
           {/* "Bring life" line - Uses primary color (#3C3063) */}
           <span 
             className={clsx(
               "font-family-amsi-cond-700 text-5xl font-extrabold leading-tight tracking-normal",
               "text-primary",
-              "sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
+              "sm:text-6xl md:text-7xl lg:text-8xl"
             )}
             style={{ color: 'var(--color-primary)' }} // Fallback to CSS variable
           >
@@ -44,18 +45,20 @@ const HeroSection: React.FC = () => {
             className={clsx(
               "font-family-amsi-cond-700 text-5xl font-extrabold leading-tight tracking-normal",
               "text-primary ",
-              "sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
+              "sm:text-6xl md:text-7xl lg:text-8xl"
             )}
             style={{ color: 'var(--color-primary)' }}
           >
             to your home
           </span>
         </h1>
-
+        
+        {/* Bottom group: Tagline + CTA, anchored to bottom on mobile */}
+        <div className="absolute inset-x-0 bottom-2 z-10 mx-auto w-full max-w-xl px-4 sm:static sm:inset-auto sm:bottom-auto sm:mt-8 sm:px-6 md:px-8">
         {/* Tagline - "Your Flooring Partner" with orange highlight on "Flooring" */}
         <p 
           className={clsx(
-            "mb-2 text-3xl font-semibold leading-relaxed tracking-wide",
+            "mb-3 text-xl font-semibold leading-relaxed tracking-wide",
             "sm:text-3xl md:mb-5 md:text-4xl lg:mb-12 lg:text-5xl"
           )}
         >
@@ -82,13 +85,13 @@ const HeroSection: React.FC = () => {
 
         {/* CTA Button - "Locate Store" with location icon */}
         <a
-          href="#locate-store"
+          href="/contact#location-heading"
           className={clsx(
-            "group inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-semibold transition-all duration-300",
-            "bg-gradient-to-b from-primary to-primary-600 text-white hover:bg-primary-600",
+            "group inline-flex w-full max-w-xs items-center justify-center gap-2 px-6 py-3 text-base font-semibold transition-all duration-300 sm:max-w-sm",
+            "bg-primary text-white hover:bg-primary-600",
             "focus:outline-none focus:ring-4 focus:ring-primary/50",
-            "sm:px-10 sm:py-5 sm:text-xl md:px-12 md:py-6 md:text-2xl",
-            "shadow-lg hover:shadow-xl hover:scale-105",
+            "sm:px-8 sm:py-4 sm:text-lg md:px-10 md:py-5 md:text-xl lg:px-12 lg:py-6 lg:text-2xl",
+            "shadow-lg hover:shadow-xl hover:scale-[1.02]",
             "rounded-bl-4xl"
           )}
           style={{ 
@@ -98,7 +101,7 @@ const HeroSection: React.FC = () => {
         >
           {/* Location Pin Icon - SVG inline for performance */}
           <svg 
-            className="h-5 w-5 transition-transform group-hover:scale-110 sm:h-7 sm:w-7 md:h-8 md:w-8" 
+            className="h-5 w-5 transition-transform group-hover:scale-110 sm:h-6 sm:w-6 md:h-7 md:w-7" 
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24" 
@@ -123,6 +126,7 @@ const HeroSection: React.FC = () => {
             Locate Store
           </span>
         </a>
+        </div>
       </div>
     </section>
   );
