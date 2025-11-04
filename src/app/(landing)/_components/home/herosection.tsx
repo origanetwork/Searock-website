@@ -87,15 +87,16 @@ const HeroSection: React.FC = () => {
         <a
           href="/contact#location-heading"
           className={clsx(
-            "group inline-flex w-full max-w-xs items-center justify-center gap-2 px-6 py-3 text-base font-semibold transition-all duration-300 sm:max-w-sm",
-            "bg-primary text-white hover:bg-primary-600",
-            "focus:outline-none focus:ring-4 focus:ring-primary/50",
-            "sm:px-8 sm:py-4 sm:text-lg md:px-10 md:py-5 md:text-xl lg:px-12 lg:py-6 lg:text-2xl",
-            "shadow-lg hover:shadow-xl hover:scale-[1.02]",
-            "rounded-bl-4xl"
+            'group inline-flex items-center justify-center gap-3 px-4 py-3 text-lg font-semibold transition-all duration-300',
+            "font-['Amsi_Pro_Condensed_600']",
+            'bg-gradient-to-br from-[#5F5387] via-primary to-[#3C3063]',
+            'w-full rounded-bl-3xl shadow-lg hover:shadow-xl',
+            'focus:outline-none focus:ring-4 focus:ring-primary/30',
+            'sm:w-auto sm:px-12 sm:py-5 sm:text-xl md:min-w-[300px] md:px-16 md:py-6 md:text-2xl lg:min-w-[360px]'
           )}
           style={{ 
             backgroundColor: 'var(--color-primary)',
+            color: 'white'
           }}
           aria-label="Find a store near you"
         >
@@ -122,7 +123,8 @@ const HeroSection: React.FC = () => {
             />
           </svg>
           
-          <span className="font-['Amsi_Pro_Condensed_700']">
+          <span className="font-['Amsi_Pro_Condensed_700']"
+          >
             Locate Store
           </span>
         </a>

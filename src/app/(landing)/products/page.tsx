@@ -44,12 +44,12 @@ const toSlug = (name: string) => name.toLowerCase().replace(/\s+/g, '-');
 
 // Reusable component for the Product Category Card
 const CategoryCard = ({ category }: { category: ProductCategory }) => (
-  // UPDATED: Single-corner radius (bottom-right only) and hover effects
-  <div className="flex flex-col overflow-hidden rounded-bl-[4rem] shadow-xl bg-white transition-all duration-300 
+  // UPDATED: Single-corner radius (bottom-left only) and hover effects
+  <div className="flex flex-col overflow-hidden rounded-bl-3xl shadow-xl bg-white transition-all duration-300 
                  hover:shadow-2xl hover:scale-[1.02] hover:ring-4 hover:ring-offset-4 hover:ring-primary/50">
 
     {/* Image container for the category banner */}
-    <div className="relative h-64 w-full overflow-hidden rounded-bl-[4rem]">
+    <div className="relative h-64 w-full overflow-hidden rounded-bl-3xl">
 
       {/* Image translation on hover */}
       <div className="h-full w-full transition-transform duration-500 ease-in-out hover:translate-x-2">
@@ -90,7 +90,14 @@ const CategoryCard = ({ category }: { category: ProductCategory }) => (
       {/* Learn More opens modal via anchor target */}
       <a
         href={`#modal-${toSlug(category.name)}`}
-        className="block w-full rounded-bl-xl bg-primary py-3 px-4 text-center font-medium text-white transition-colors duration-200 hover:bg-[#382b60] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+        className={
+          'group inline-flex items-center justify-center gap-3 px-4 py-3 text-lg font-semibold transition-all duration-300 ' +
+          "font-['Amsi_Pro_Condensed_600'] " +
+          'bg-gradient-to-br from-[#5F5387] via-primary to-[#3C3063] ' +
+          'w-full rounded-bl-3xl shadow-lg hover:shadow-xl ' +
+          'focus:outline-none focus:ring-4 focus:ring-primary/30 '
+        }
+        style={{ backgroundColor: 'var(--color-primary)', color: 'white' }}
       >
         Learn More
       </a>

@@ -6,29 +6,13 @@ export const metadata: Metadata = {
   description: "Searock - Your Trusted Tile Gallery",
   icons: {
     icon: [
-      { 
-        url: "/images/home/searock-white.png",
-        type: "image/png",
-        sizes: "512x512",
-      },
-      { 
-        url: "/images/home/searock-white.png",
-        type: "image/png",
-        sizes: "192x192",
-        rel: "icon"
-      },
-      { 
-        url: "/images/home/searock-white.png",
-        type: "image/png",
-        sizes: "32x32",
-        rel: "icon"
-      },
-      { 
-        url: "/images/home/searock-white.png",
-        type: "image/png",
-        sizes: "16x16",
-        rel: "icon"
-      }
+      { url: "/images/home/searock-white.png", type: "image/png", sizes: "16x16", rel: "icon" },
+      { url: "/images/home/searock-white.png", type: "image/png", sizes: "32x32", rel: "icon" },
+      { url: "/images/home/searock-white.png", type: "image/png", sizes: "48x48", rel: "icon" },
+      { url: "/images/home/searock-white.png", type: "image/png", sizes: "96x96", rel: "icon" },
+      { url: "/images/home/searock-white.png", type: "image/png", sizes: "192x192", rel: "icon" },
+      { url: "/images/home/searock-white.png", type: "image/png", sizes: "256x256", rel: "icon" },
+      { url: "/images/home/searock-white.png", type: "image/png", sizes: "512x512", rel: "icon" },
     ],
     apple: [
       { 
@@ -37,6 +21,7 @@ export const metadata: Metadata = {
         type: "image/png"
       }
     ],
+    shortcut: "/images/home/searock-white.png",
   },
 };
 
@@ -47,6 +32,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/images/home/searock-logo.png" type="image/png" />
+        <link rel="shortcut icon" href="/images/home/searock-logo.png" type="image/png" />
+      </head>
       <body className="antialiased">
         {children}
       </body>

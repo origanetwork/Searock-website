@@ -82,11 +82,11 @@ const PartnersSection: React.FC = () => {
   const getCardBorderRadius = (index: number): string => {
     switch (index) {
       case 0:
-        return 'rounded-bl-[2.5rem] sm:rounded-bl-[3rem]';
+        return 'rounded-bl-xl sm:rounded-bl-[3rem]';
       case 1:
-        return 'rounded-bl-[2.5rem] sm:rounded-bl-[3rem]';
+        return 'rounded-bl-xl sm:rounded-bl-[3rem]';
       case 2:
-        return 'rounded-bl-[2.5rem] sm:rounded-bl-[3rem]';
+        return 'rounded-bl-xl sm:rounded-bl-[3rem]';
       default:
         return '';
     }

@@ -84,8 +84,8 @@ export default function ContactSection() {
             
             {/* Phone Card */}
             <div className="flex items-start gap-4 rounded-bl-3xl bg-white/95 p-4 shadow ring-1 ring-black/5">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-orange-400">
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 18a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 3.32 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.86.33 1.7.62 2.5a2 2 0 0 1-.45 2.11L8 9a16 16 0 0 0 7 7l.67-1.28a2 2 0 0 1 2.11-.45c.8.29 1.64.5 2.5.62A2 2 0 0 1 22 16.92z"/></svg>
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#5F5387] via-primary to-[#3C3063] text-orange-400 shadow-md">
+                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 18a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 3.32 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.86.33 1.7.62 2.5a2 2 0 0 1-.45 2.11L8 9a16 16 0 0 0 7 7l.67-1.28a2 2 0 0 1 2.11-.45c.8.29 1.64.5 2.5.62A2 2 0 0 1 22 16.92z"/></svg>
               </span>
               <div>
                 <p className="font-bold text-slate-900">Phone</p>
@@ -96,8 +96,8 @@ export default function ContactSection() {
 
             {/* Email Card */}
             <div className="flex items-start gap-4 rounded-bl-3xl bg-white/95 p-4 shadow ring-1 ring-black/5">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-orange-400">
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#5F5387] via-primary to-[#3C3063] text-orange-400 shadow-md">
+                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
               </span>
               <div>
                 <p className="font-bold text-slate-900">Email</p>
@@ -107,9 +107,21 @@ export default function ContactSection() {
             </div>
 
             {/* Location Card */}
-            <div className="flex items-start gap-4 rounded-bl-3xl bg-white/95 p-4 shadow ring-1 ring-black/5">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-orange-400">
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div className="flex items-center gap-4 rounded-bl-3xl bg-white/95 p-4 shadow ring-1 ring-black/5">
+              <span className="inline-flex h-12 w-12 min-w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#5F5387] via-primary to-[#3C3063] text-orange-400 shadow-md">
+                <svg 
+                  className="h-6 w-6" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  aria-hidden="true"
+                >
+                  <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
               </span>
               <div>
                 <p className="font-bold text-slate-900">Store Location</p>
@@ -119,8 +131,8 @@ export default function ContactSection() {
 
             {/* Business Hours Card */}
             <div className="flex items-start gap-4 rounded-bl-3xl bg-white/95 p-4 shadow ring-1 ring-black/5">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-orange-400">
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#5F5387] via-primary to-[#3C3063] text-orange-400 shadow-md">
+                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
               </span>
               <div>
                 <p className="font-bold text-slate-900">Business Hours</p>
