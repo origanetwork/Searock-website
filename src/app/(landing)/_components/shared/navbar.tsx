@@ -42,13 +42,13 @@ const Navbar = () => {
           {/* Logo: centered, larger size */}
           <Link href="/" className="flex items-center justify-start" aria-label="Searock Home">
             <Image
-              src="/images/home/searock-logo.png"
+              src="/images/logo/Searock.svg"
               alt="Searock"
-              width={320}
-              height={80}
+              width={600}
+              height={150}
               priority
-              sizes="(max-width: 768px) 620px, 500px"
-              className="h-auto w-62"
+              sizes="(max-width: 768px) 180px, (max-width: 1024px) 240px, (max-width: 1280px) 280px, 320px"
+              className="h-auto w-[180px] md:w-[240px] lg:w-[280px] xl:w-[320px] object-contain shrink-0"
             />
           </Link>
 

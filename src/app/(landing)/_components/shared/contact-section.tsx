@@ -207,7 +207,7 @@ export default function ContactSection() {
                 type="submit"
                 disabled={isSubmitting}
                 className={cn(
-                  'w-full rounded-bl-3xl bg-gradient-to-r from-[#934C12] via-[#F9811E] to-[#F9811E] px-6 py-3.5 font-bold uppercase tracking-wide text-white shadow-lg transition-all hover:shadow-xl hover:brightness-110 focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary disabled:opacity-50',
+                  'w-full rounded-bl-3xl bg-[#F9811E] px-6 py-3.5 font-bold uppercase tracking-wide text-white shadow-lg transition-all hover:shadow-xl hover:brightness-110 focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary disabled:opacity-50',
                   submitSuccess && 'bg-green-500'
                 )}
               >

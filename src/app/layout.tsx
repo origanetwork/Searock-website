@@ -33,8 +33,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/images/home/searock-logo.png" type="image/png" />
-        <link rel="shortcut icon" href="/images/home/searock-logo.png" type="image/png" />
+        <link rel="icon" href="/images/home/searock-white.png" type="image/png" />
+        <link rel="shortcut icon" href="/images/home/searock-white.png" type="image/png" />
       </head>
       <body className="antialiased">
         {children}

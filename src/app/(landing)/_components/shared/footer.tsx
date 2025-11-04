@@ -124,7 +124,7 @@ export default function Footer() {
         </div>
 
         {/* Menu and Quick Links */}
-        <div className="grid grid-cols-2 gap-8 border-t border-white/20 pt-8 sm:grid-cols-2 lg:grid-cols-3 sm:gap-12">
+        <div className="grid grid-cols-1 gap-8 border-t border-white/20 pt-8 sm:grid-cols-2 lg:grid-cols-3 sm:gap-12">
           {/* Menu */}
           <div className="col-span-1">
             <h4 className="mb-4 font-[family-name:var(--font-family-amsi-cond-700)] text-base font-bold uppercase tracking-wide sm:text-lg">
@@ -144,8 +144,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Quick Links - Right aligned on mobile */}
-          <div className="col-span-1 text-right sm:text-left">
+          {/* Quick Links */}
+          <div className="col-span-1">
             <h4 className="mb-4 font-[family-name:var(--font-family-amsi-cond-700)] text-base font-bold uppercase tracking-wide sm:text-lg">
               Quick Links
             </h4>
@@ -163,12 +163,12 @@ export default function Footer() {
             </ul>
           </div>
           <div className="col-span-2 sm:col-span-1 lg:col-span-1">
-            <h4 className="mb-4 text-center font-[family-name:var(--font-family-amsi-cond-700)] text-base font-bold uppercase tracking-wide sm:text-left sm:text-lg">
+            <h4 className="mb-4 font-[family-name:var(--font-family-amsi-cond-700)] text-base font-bold uppercase tracking-wide sm:text-lg">
               Contact
             </h4>
-            <ul className="space-y-3 text-center sm:text-left" role="list">
-              <li className="flex flex-col items-center sm:block">
-                <div className="mx-auto flex max-w-[280px] items-start gap-3 text-center text-white/80 sm:max-w-none sm:text-left">
+            <ul className="space-y-3" role="list">
+              <li className="block">
+                <div className="flex items-start gap-3 text-white/80">
                   <svg className="mt-1 h-5 w-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
@@ -180,7 +180,7 @@ export default function Footer() {
                   </p>
                 </div>
               </li>
-              <li className="flex justify-center sm:justify-start">
+              <li className="flex justify-start">
                 <a
                   href="tel:+916238811940"
                   className="inline-flex items-center gap-3 font-[family-name:var(--font-family-amsi-cond-400)] text-sm text-white/80 transition-colors hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary sm:text-base"
@@ -191,7 +191,7 @@ export default function Footer() {
                   +91 6238811940
                 </a>
               </li>
-              <li className="flex justify-center sm:justify-start">
+              <li className="flex justify-start">
                 <a
                   href="mailto:searocktilegallery@gmail.com"
                   className="inline-flex items-center gap-3 font-[family-name:var(--font-family-amsi-cond-400)] text-sm text-white/80 transition-colors hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary sm:text-base"
