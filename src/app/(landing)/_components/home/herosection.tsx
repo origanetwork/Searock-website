@@ -11,7 +11,7 @@ const HeroSection: React.FC = () => {
       {/* Background Image with Overlay - Optimized with next/image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/home/hero-bg.webp"
+          src="/images/home/hero-bg.jpg"
           alt="Beautiful modern living room interior"
           fill
           priority // Load immediately as it's above the fold
