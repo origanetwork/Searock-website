@@ -84,9 +84,9 @@ const PartnersSection: React.FC = () => {
       case 0:
         return 'rounded-bl-xl sm:rounded-bl-[3rem]';
       case 1:
-        return 'rounded-bl-xl sm:rounded-bl-[3rem]';
+        return '';
       case 2:
-        return 'rounded-bl-xl sm:rounded-bl-[3rem]';
+        return '';
       default:
         return '';
     }
@@ -101,7 +101,7 @@ const PartnersSection: React.FC = () => {
   const getCardPositionClasses = (index: number): string => {
     switch (index) {
       case 1:
-        return 'translate-y-8 md:translate-y-8 lg:translate-y-8';
+        return '';
       default:
         return '';
     }
@@ -249,7 +249,7 @@ const PartnersSection: React.FC = () => {
         </div>
 
         {/* Partner Logos Grid */}
-        <div ref={gridRef} className="grid grid-cols-3 items-start gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-x-10 lg:gap-y-14 z-20">
+        <div ref={gridRef} className="grid grid-cols-3 items-start gap-6 sm:grid-cols-3 sm:gap-8 lg:grid-cols-3 lg:gap-x-10 lg:gap-y-14 z-20">
           {visiblePartners.map((partner, index) => (
             <div
               key={index}

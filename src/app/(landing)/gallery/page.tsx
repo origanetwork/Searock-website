@@ -47,18 +47,20 @@ export default function GalleryPage() {
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
             {first.map((img, idx) => (
-              <figure key={idx} className="group relative overflow-hidden rounded-xl bg-white shadow-sm border border-gray-200">
-                <div className="relative w-full aspect-square">
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    priority={idx < 4}
-                  />
-                </div>
-              </figure>
+              <a key={idx} href={`#gallery-${idx}`} className="block">
+                <figure className="group relative overflow-hidden rounded-xl bg-white shadow-sm border border-gray-200">
+                  <div className="relative w-full aspect-square">
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      fill
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      priority={idx < 4}
+                    />
+                  </div>
+                </figure>
+              </a>
             ))}
           </div>
 
@@ -72,17 +74,19 @@ export default function GalleryPage() {
           <div className="mt-8 hidden peer-checked:block">
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
               {rest.map((img, idx) => (
-                <figure key={idx} className="group relative overflow-hidden rounded-xl bg-white shadow-sm border border-gray-200">
-                  <div className="relative w-full aspect-square">
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      fill
-                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </div>
-                </figure>
+                <a key={idx} href={`#gallery-${idx + first.length}`} className="block">
+                  <figure className="group relative overflow-hidden rounded-xl bg-white shadow-sm border border-gray-200">
+                    <div className="relative w-full aspect-square">
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        fill
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                  </figure>
+                </a>
               ))}
             </div>
             <div className="mt-6 flex justify-center">
@@ -93,6 +97,54 @@ export default function GalleryPage() {
           </div>
         </div>
       </section>
+
+      {galleryImages.map((img, i) => {
+        const prev = (i - 1 + galleryImages.length) % galleryImages.length;
+        const next = (i + 1) % galleryImages.length;
+        return (
+          <div
+            key={i}
+            id={`gallery-${i}`}
+            className="modal fixed inset-0 z-50 hidden flex items-center justify-center p-4"
+            aria-hidden="true"
+          >
+            <a href="#" className="absolute inset-0 bg-black/60 z-0" aria-label="Close"></a>
+            <div className="relative z-10 w-full max-w-6xl">
+              <div className="relative w-full h-[70vh] bg-white rounded-bl-[2rem] overflow-hidden shadow-2xl flex items-center justify-center">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes="100vw"
+                  className="object-contain bg-gray-100"
+                  priority={i < 4}
+                />
+                <a
+                  href={`#gallery-${prev}`}
+                  className="absolute left-3 top-1/2 -translate-y-1/2 inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white shadow hover:brightness-110 text-xl"
+                  aria-label="Previous"
+                >
+                  ‹
+                </a>
+                <a
+                  href={`#gallery-${next}`}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white shadow hover:brightness-110 text-xl"
+                  aria-label="Next"
+                >
+                  ›
+                </a>
+                <a
+                  href="#"
+                  className="absolute right-3 top-3 inline-flex h-10 w-10 items-center justify-center rounded-md bg-primary text-white shadow hover:brightness-110 text-xl"
+                  aria-label="Close"
+                >
+                  ✕
+                </a>
+              </div>
+            </div>
+          </div>
+        );
+      })}
     </main>
   );
 }
