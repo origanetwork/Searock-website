@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { FaHandshakeAngle } from "react-icons/fa6";
 import { HiOutlineLightBulb } from "react-icons/hi";
 import { TbTargetArrow } from "react-icons/tb";
@@ -50,20 +49,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="relative w-full overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <Image
-            src="/images/home/heroAboutbg.webp"
-            alt="Stone and tile background"
-            fill
-            sizes="100vw"
-            className="object-cover"
-            priority
-          />
-        </div>
-
+      <section className="w-full bg-white">
         <div className="mx-auto max-w-screen-sm px-6 py-8 space-y-4 md:max-w-2xl lg:max-w-5xl md:grid md:grid-cols-2 md:gap-6 lg:gap-8 md:space-y-0">
-          <article className="rounded-bl-3xl bg-white p-5 shadow-[0_10px_20px_rgba(0,0,0,0.08)]">
+          <article className="rounded-bl-3xl bg-white p-5 shadow-md">
             <div className="mx-auto mb-2 flex h-6 w-6 items-center justify-center text-secondary">
               <HiOutlineLightBulb  className="h-6 w-6" />
             </div>
@@ -73,7 +61,7 @@ export default function AboutPage() {
             </p>
           </article>
 
-          <article className="rounded-bl-3xl bg-white p-5 shadow-[0_10px_20px_rgba(0,0,0,0.08)]">
+          <article className="rounded-bl-3xl bg-white p-5 shadow-md">
             <div className="mx-auto mb-2 flex h-6 w-6 items-center justify-center text-secondary">
               <TbTargetArrow className="h-6 w-6" />
             </div>
@@ -83,7 +71,7 @@ export default function AboutPage() {
             </p>
           </article>
 
-          <article className="rounded-bl-3xl bg-white p-5 shadow-[0_10px_20px_rgba(0,0,0,0.08)]">
+          <article className="rounded-bl-3xl bg-white p-5 shadow-md">
             <div className="mx-auto mb-2 flex h-6 w-6 items-center justify-center text-secondary">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-6 w-6"><path strokeLinecap="round" strokeLinejoin="round" d="M12 17l-5 3 1.9-5.9L4 9l6-.2L12 3l2 5.8 6 .2-4.9 5.1L17 20z"/></svg>
             </div>
@@ -93,7 +81,7 @@ export default function AboutPage() {
             </p>
           </article>
 
-          <article className="rounded-bl-3xl bg-white p-5 shadow-[0_10px_20px_rgba(0,0,0,0.08)]">
+          <article className="rounded-bl-3xl bg-white p-5 shadow-md">
             <div className="mx-auto mb-2 flex h-6 w-6 items-center justify-center text-secondary">
               <FaHandshakeAngle className="h-6 w-6" />
             </div>
@@ -139,16 +127,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="relative w-full overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <Image
-            src="/images/home/heroAboutbg.webp"
-            alt="Stone and tile background"
-            fill
-            sizes="100vw"
-            className="object-cover"
-          />
-        </div>
+      <section className="w-full bg-white">
         <div className="mx-auto max-w-screen-sm px-4 py-4"></div>
       </section>
     </main>

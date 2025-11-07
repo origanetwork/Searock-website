@@ -86,9 +86,9 @@ const CategoryCard = ({ category }: { category: ProductCategory }) => (
           </li>
         ))}
       </ul>
-
+{/* 
       {/* Learn More opens modal via anchor target */}
-      <a
+      {/* <a
         href={`#modal-${toSlug(category.name)}`}
         className={
           'group inline-flex items-center justify-center gap-3 px-4 py-3 text-lg font-semibold transition-all duration-300 ' +
@@ -100,7 +100,7 @@ const CategoryCard = ({ category }: { category: ProductCategory }) => (
         style={{ backgroundColor: 'var(--color-primary)', color: 'white' }}
       >
         Learn More
-      </a>
+      </a>  */}
     </div>
   </div>
 );
