@@ -16,7 +16,7 @@ import Link from 'next/link';
 const socialLinks = [
   {
     name: 'Facebook',
-    href: 'https://facebook.com/searock',
+    href: 'https://www.facebook.com/people/Searock-Tile-Gallery/61562857508093/',
     icon: (
       <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path
@@ -38,7 +38,7 @@ const socialLinks = [
   },
   {
     name: 'YouTube',
-    href: 'https://youtube.com/@searock',
+    href: 'https://www.youtube.com/@searocktilegallery?si=M-YhXfWnKKJ7UI0U',
     icon: (
       <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path
@@ -51,7 +51,7 @@ const socialLinks = [
   },
   {
     name: 'Instagram',
-    href: 'https://www.instagram.com/searocktilegallery',
+    href: 'https://www.instagram.com/searock_tile_gallery?igsh=Y3U5MWl5dmR4dmc3',
     icon: (
       <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />

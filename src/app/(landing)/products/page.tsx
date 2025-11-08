@@ -86,21 +86,7 @@ const CategoryCard = ({ category }: { category: ProductCategory }) => (
           </li>
         ))}
       </ul>
-{/* 
-      {/* Learn More opens modal via anchor target */}
-      {/* <a
-        href={`#modal-${toSlug(category.name)}`}
-        className={
-          'group inline-flex items-center justify-center gap-3 px-4 py-3 text-lg font-semibold transition-all duration-300 ' +
-          "font-['Amsi_Pro_Condensed_600'] " +
-          'bg-gradient-to-br from-[#5F5387] via-primary to-[#3C3063] ' +
-          'w-full rounded-bl-3xl shadow-lg hover:shadow-xl ' +
-          'focus:outline-none focus:ring-4 focus:ring-primary/30 '
-        }
-        style={{ backgroundColor: 'var(--color-primary)', color: 'white' }}
-      >
-        Learn More
-      </a>  */}
+
     </div>
   </div>
 );
@@ -108,7 +94,7 @@ const CategoryCard = ({ category }: { category: ProductCategory }) => (
 
 export default function ProductsPage() {
   return (
-    <main className="flex flex-col min-h-screen bg-[url('/images/home/heroAboutbg.webp')] bg-cover bg-center bg-no-repeat">
+    <main className="flex flex-col min-h-screen bg-white">
 
       {/* Products Hero Section */}
       <section className="w-full bg-primary text-white">
