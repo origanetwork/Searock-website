@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
-import { FaHeadset, FaWhatsapp, FaPhone, FaEnvelope } from 'react-icons/fa';
+import { FaWhatsapp, FaPhone, FaEnvelope } from 'react-icons/fa';
+import { RiCustomerService2Fill } from 'react-icons/ri';
 
 export default function WhatsAppFab() {
   const [open, setOpen] = useState(false);
@@ -9,7 +10,7 @@ export default function WhatsAppFab() {
   const mailHref = 'mailto:searocktilegallery@gmail.com';
 
   return (
-    <div className="fixed z-50 bottom-3 right-3 sm:bottom-4 sm:right-4 md:bottom-8 md:right-8">
+    <div className="fixed z-50 bottom-3 right-3 sm:bottom-4 sm:right-4 md:bottom-8 md:right-8 flex flex-col items-end">
       {open && (
         <div className="mb-3 w-56 rounded-xl bg-white shadow-xl ring-1 ring-black/5 overflow-hidden">
           <a
@@ -52,11 +53,12 @@ export default function WhatsAppFab() {
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-label="Customer Care"
-        className="inline-flex items-center justify-center text-primary hover:opacity-90 active:scale-95 transition p-1 sm:p-1.5 md:p-2"
+        className="inline-flex items-center justify-center text-primary hover:opacity-90 transition p-1 sm:p-1.5 md:p-2 focus:outline-none focus:ring-0 select-none"
       >
-        <FaHeadset className="h-16 w-16 sm:h-16 sm:w-16 md:h-16 md:w-16 xl:h-20 xl:w-20" />
+        <RiCustomerService2Fill className="h-16 w-16 sm:h-16 sm:w-16 md:h-16 md:w-16 xl:h-20 xl:w-20" />
         <span className="sr-only">Customer Care</span>
       </button>
     </div>
   );
 }
+
