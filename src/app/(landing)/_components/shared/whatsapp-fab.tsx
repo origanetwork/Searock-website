@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { FaInfoCircle, FaWhatsapp, FaPhone, FaEnvelope } from 'react-icons/fa';
+import { FaHeadset, FaWhatsapp, FaPhone, FaEnvelope } from 'react-icons/fa';
 
 export default function WhatsAppFab() {
   const [open, setOpen] = useState(false);
@@ -51,11 +51,11 @@ export default function WhatsAppFab() {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        aria-label="Information and Support"
+        aria-label="Customer Care"
         className="inline-flex items-center justify-center text-primary hover:opacity-90 active:scale-95 transition p-1 sm:p-1.5 md:p-2"
       >
-        <FaInfoCircle className="h-16 w-16 sm:h-16 sm:w-16 md:h-16 md:w-16 xl:h-20 xl:w-20" />
-        <span className="sr-only">Information and Support</span>
+        <FaHeadset className="h-16 w-16 sm:h-16 sm:w-16 md:h-16 md:w-16 xl:h-20 xl:w-20" />
+        <span className="sr-only">Customer Care</span>
       </button>
     </div>
   );
