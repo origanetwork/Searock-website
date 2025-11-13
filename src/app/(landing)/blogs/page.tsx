@@ -209,7 +209,7 @@ export default function BlogsPage() {
   const rest = blogPosts.slice(4);
 
   return (
-    <main className="flex flex-col min-h-screen bg-[url('/images/home/heroAboutbg.webp')] bg-cover bg-center bg-no-repeat">
+    <main className="flex flex-col min-h-screen bg-white">
       <section className="w-full bg-primary text-white">
         <div className="mx-auto max-w-screen-sm px-6 py-10 md:py-16">
           <h1 className="text-center font-['Amsi_Pro_Condensed_700'] text-4xl md:text-5xl lg:text-6xl">Blogs</h1>

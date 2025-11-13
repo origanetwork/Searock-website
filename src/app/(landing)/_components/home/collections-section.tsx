@@ -100,7 +100,7 @@ const CollectionCard: React.FC<CollectionCardProps> = ({
         </div>
 
         {/* Right Image - Rounded Top-Right Corner */}
-        <div className="relative aspect-[2/4] w-full overflow-hidden rounded-xs sm:rounded-tr-[3rem] md:rounded-tr-[4rem]">
+        <div className="relative aspect-[2/4] w-full overflow-hidden">
           <Image
             src={images[2].src}
             alt={images[2].alt}
