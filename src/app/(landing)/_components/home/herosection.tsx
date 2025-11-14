@@ -15,7 +15,6 @@ const HeroSection: React.FC = () => {
           alt="Beautiful modern living room interior"
           fill
           priority // Load immediately as it's above the fold
-          quality={90}
           className="object-cover object-top sm:object-center"
           sizes="100vw" // Full viewport width for hero
         />
