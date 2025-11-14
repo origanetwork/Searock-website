@@ -11,7 +11,7 @@ const HeroSection: React.FC = () => {
       {/* Background Image with Overlay - Optimized with next/image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/home/hero-bg.jpg"
+          src="/images/hero/h3.jpg"
           alt="Beautiful modern living room interior"
           fill
           priority // Load immediately as it's above the fold
@@ -27,13 +27,13 @@ const HeroSection: React.FC = () => {
       <div className="z-10 mx-auto flex w-full max-w-xl flex-col items-center justify-center px-4 pt-2 pb-12 text-center sm:max-w-2xl sm:px-6 sm:pt-12 md:px-8 lg:pt-16 lg:pb-20">
         
         {/* Main Headline - Split into two lines for visual impact */}
-        <h1 className="mb-2 mt-5 sm:mt-0 flex flex-col gap-0.5 md:mb-8 lg:mb-10 justify-center items-center">
+        <h1 className="mb-2 mt-12 sm:mt-0 flex flex-col gap-0.5 md:mb-8 lg:mb-10 justify-center items-center">
           {/* "Bring life" line - Uses primary color (#3C3063) */}
           <span 
             className={clsx(
-              "font-family-amsi-cond-700 text-5xl font-extrabold leading-tight tracking-normal",
+              "font-family-amsi-cond-700 text-5xl font-extrabold leading-[1.1] tracking-normal",
               "text-primary",
-              "sm:text-6xl md:text-7xl lg:text-8xl"
+              "sm:text-6xl sm:leading-[1.05] md:text-7xl md:leading-[1.05] lg:text-8xl lg:leading-[1.03]"
             )}
             style={{ color: 'var(--color-primary)' }} // Fallback to CSS variable
           >
@@ -43,9 +43,9 @@ const HeroSection: React.FC = () => {
           {/* "to your home" line - Also in primary color */}
           <span 
             className={clsx(
-              "font-family-amsi-cond-700 text-5xl font-extrabold leading-tight tracking-normal",
+              "font-family-amsi-cond-700 text-5xl font-extrabold leading-[1.1] tracking-normal",
               "text-primary ",
-              "sm:text-6xl md:text-7xl lg:text-8xl"
+              "sm:text-6xl sm:leading-[1.05] md:text-7xl md:leading-[1.05] lg:text-8xl lg:leading-[1.03]"
             )}
             style={{ color: 'var(--color-primary)' }}
           >
