@@ -11,15 +11,23 @@ const HeroSection: React.FC = () => {
       {/* Background Image with Overlay - Optimized with next/image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero/h3.jpg"
+          src="/images/hero/mob.jpg"
           alt="Beautiful modern living room interior"
           fill
-          priority // Load immediately as it's above the fold
-          className="object-cover object-top sm:object-center"
-          sizes="100vw" // Full viewport width for hero
+          priority
+          className="object-cover object-top sm:hidden"
+          sizes="100vw"
+        />
+        <Image
+          src="/images/hero/h1.jpg"
+          alt="Beautiful modern living room interior"
+          fill
+          priority
+          className="hidden sm:block object-cover object-center"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-transparent to-transparent sm:from-transparent" />
-      
+
       </div>
 
       {/* Content Container - Centered with responsive padding */}
@@ -88,13 +96,12 @@ const HeroSection: React.FC = () => {
           className={clsx(
             'group inline-flex items-center justify-center gap-3 px-4 py-3 text-lg font-semibold transition-all duration-300',
             "font-['Amsi_Pro_Condensed_600']",
-            'bg-gradient-to-br from-[#5F5387] via-primary to-[#3C3063]',
+            'bg-gradient-to-br from-[#5F5387]/30 via-primary/30 to-[#3C3063]/30 hover:from-[#5F5387]/40 hover:via-primary/40 hover:to-[#3C3063]/40 backdrop-blur-sm border border-primary/40',
             'w-full rounded-bl-3xl shadow-lg hover:shadow-xl',
             'focus:outline-none focus:ring-4 focus:ring-primary/30',
             'sm:w-auto sm:px-12 sm:py-5 sm:text-xl md:min-w-[300px] md:px-16 md:py-6 md:text-2xl lg:min-w-[360px]'
           )}
           style={{ 
-            backgroundColor: 'var(--color-primary)',
             color: 'white'
           }}
           aria-label="Find a store near you"
