@@ -96,13 +96,13 @@ const HeroSection: React.FC = () => {
           className={clsx(
             'group inline-flex items-center justify-center gap-3 px-4 py-3 text-lg font-semibold transition-all duration-300',
             "font-['Amsi_Pro_Condensed_600']",
-            'bg-gradient-to-br from-[#5F5387]/30 via-primary/30 to-[#3C3063]/30 hover:from-[#5F5387]/40 hover:via-primary/40 hover:to-[#3C3063]/40 backdrop-blur-sm border border-primary/40',
+            'bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/40',
             'w-full rounded-bl-3xl shadow-lg hover:shadow-xl',
-            'focus:outline-none focus:ring-4 focus:ring-primary/30',
+            'focus:outline-none focus:ring-4 focus:ring-white/30',
             'sm:w-auto sm:px-12 sm:py-5 sm:text-xl md:min-w-[300px] md:px-16 md:py-6 md:text-2xl lg:min-w-[360px]'
           )}
           style={{ 
-            color: 'white'
+            color: 'var(--color-primary)'
           }}
           aria-label="Find a store near you"
         >
