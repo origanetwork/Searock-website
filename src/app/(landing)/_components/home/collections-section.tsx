@@ -220,7 +220,7 @@ const CollectionsSection: React.FC = () => {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-gradient-to-b from-purple-100 via-purple-50 to-purple-100 py-12 md:py-16 lg:py-20"
+      className="relative w-full overflow-hidden bg-white py-12 md:py-16 lg:py-20"
       aria-label="Our Collections section"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8">

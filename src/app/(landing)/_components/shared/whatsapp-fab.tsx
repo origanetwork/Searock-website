@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { FaWhatsapp, FaPhone, FaEnvelope } from 'react-icons/fa';
-import { RiCustomerService2Fill } from 'react-icons/ri';
+import { FaWhatsapp, FaPhone, FaEnvelope, FaMobileAlt } from 'react-icons/fa';
 
 export default function WhatsAppFab() {
   const [open, setOpen] = useState(false);
@@ -55,7 +54,7 @@ export default function WhatsAppFab() {
         aria-label="Customer Care"
         className="inline-flex items-center justify-center text-primary hover:opacity-90 transition p-1 sm:p-1.5 md:p-2 focus:outline-none focus:ring-0 select-none"
       >
-        <RiCustomerService2Fill className="h-16 w-16 sm:h-16 sm:w-16 md:h-16 md:w-16 xl:h-20 xl:w-20" />
+        <FaMobileAlt className="h-16 w-16 sm:h-16 sm:w-16 md:h-16 md:w-16 xl:h-20 xl:w-20" />
         <span className="sr-only">Customer Care</span>
       </button>
     </div>
