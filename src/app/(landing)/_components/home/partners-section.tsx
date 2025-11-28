@@ -257,7 +257,7 @@ const PartnersSection: React.FC = () => {
                 // Card base
                 'flex items-center justify-center p-2 transition-transform duration-300',
                 // Card surface to match the reference (light panel with border)
-                'bg-gray-200/40 backdrop-blur-[1px] border-[0.5px] border-white/80 shadow-[0_6px_24px_rgba(0,0,0,0.15)]',
+                // 'bg-gray-200/40 backdrop-blur-[1px] border-[0.5px] border-white/80 shadow-[0_6px_24px_rgba(0,0,0,0.15)]',
                 'hover:scale-[1.02] hover:bg-white/25',
                 'sm:p-10 md:p-12 lg:p-14',
                 getCardBorderRadius(index),
