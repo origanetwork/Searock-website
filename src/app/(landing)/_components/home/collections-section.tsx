@@ -119,14 +119,13 @@ const CollectionCard: React.FC<CollectionCardProps> = ({
           className={clsx(
             'group inline-flex items-center justify-center gap-3 px-4 py-3 text-lg font-semibold transition-all duration-300',
             "font-['Amsi_Pro_Condensed_600']",
-            'bg-gradient-to-br from-[#5F5387] via-primary to-[#3C3063]',
+            'bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/40',
             'w-full rounded-bl-3xl shadow-lg hover:shadow-xl',
             'focus:outline-none focus:ring-4 focus:ring-primary/30',
             'sm:w-auto sm:px-12 sm:py-5 sm:text-xl md:px-16 md:py-6 md:text-2xl lg:w-86'
           )}
           style={{
-            backgroundColor: 'var(--color-primary)',
-            color: 'white'
+            color: 'var(--color-primary)'
           }}
           aria-label="Learn more about our story"
         >
@@ -220,7 +219,7 @@ const CollectionsSection: React.FC = () => {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-white py-12 md:py-16 lg:py-20"
+      className="relative w-full overflow-hidden bg-[#EFE7FF] py-12 md:py-16 lg:py-20"
       aria-label="Our Collections section"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8">

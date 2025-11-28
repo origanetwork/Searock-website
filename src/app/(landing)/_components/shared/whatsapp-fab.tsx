@@ -54,10 +54,9 @@ export default function WhatsAppFab() {
         aria-label="Customer Care"
         className="inline-flex items-center justify-center text-primary hover:opacity-90 transition p-1 sm:p-1.5 md:p-2 focus:outline-none focus:ring-0 select-none"
       >
-        <FaPhone className="h-16 w-16 sm:h-16 sm:w-16 md:h-16 md:w-16 xl:h-20 xl:w-20" />
+        <FaPhone className="h-14 w-14 sm:h-14 sm:w-14 md:h-14 md:w-14 xl:h-16 xl:w-16" />
         <span className="sr-only">Customer Care</span>
       </button>
     </div>
   );
 }
-
