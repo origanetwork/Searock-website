@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'Our Products • Searock',
@@ -87,6 +88,16 @@ const CategoryCard = ({ category }: { category: ProductCategory }) => (
         ))}
       </ul>
 
+      <div className="flex justify-end">
+        <Link
+          href={category.link}
+          className="inline-flex items-center gap-1 text-primary font-medium hover:underline"
+        >
+          Read more
+          <span aria-hidden>→</span>
+        </Link>
+      </div>
+
     </div>
   </div>
 );
@@ -163,7 +174,7 @@ export default function ProductsPage() {
         <div
           key={category.name}
           id={`modal-${toSlug(category.name)}`}
-          className="modal fixed inset-0 z-50 hidden flex items-center justify-center p-4"
+          className="modal fixed inset-0 z-50 hidden items-center justify-center p-4"
           aria-hidden="true"
         >
           <a href="#" className="absolute inset-0 bg-black/60 z-0" aria-label="Close"></a>

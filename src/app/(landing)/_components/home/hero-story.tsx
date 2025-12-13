@@ -55,8 +55,7 @@ const HeroStory: React.FC = () => {
             )}
             style={{ color: 'var(--color-primary)' }}
           >
-            Today, we&apos;re proud to be your trusted flooring partner, carefully selecting every product to meet our
-            strict standards for quality and environmental responsibility.
+            We select every product with care, choosing only what’s safe, durable, and truly reliable for your home.
           </p>
 
           {/* CTA Button - "Our Story" */}
@@ -100,3 +99,5 @@ const HeroStory: React.FC = () => {
 };
 
 export default HeroStory;
+
+

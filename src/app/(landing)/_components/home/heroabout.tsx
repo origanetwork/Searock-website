@@ -78,7 +78,14 @@ const HeroAbout: React.FC = () => {
                 )}
                
             >
-                At Searock, we are dedicated to transforming spaces with premium flooring, tiles, granites, and bathware solutions. Blending style, durability, and functionality, our products are crafted to meet the highest standards of design and quality. We focus on helping customers create interiors that reflect elegance, comfort, and lasting value.
+                Welcome to searock
+
+Building your home is a dream, and we know the process can be challenging.
+At Searock, we’re here to make it easier.
+
+For 30 years, families have trusted us not just for products, but for clear and honest guidance.
+
+Our purpose is simple: helping you choose the right products so your home-building journey feels smoother and more confident.
             </p>
 
             {/* Feature Icon with Label - Auto-rotating */}

@@ -143,7 +143,7 @@ const tiles = [
   {
     title: 'Tiles',
     description:
-      "Searock's tiles collection blends style, durability, and modern design. From classic to contemporary, our tiles transform any space with lasting elegance and quality.",
+      "Stylish, durable tiles for every space—classic to contemporary.",
     images: [
       {
         src: '/images/collections/tile-1.webp',
@@ -166,7 +166,7 @@ const granites = [
   {
     title: 'Granite',
     description:
-      'Searock’s granite collection blends strength and elegance, offering durable, timeless surfaces that elevate any space.',
+      'Strong, elegant stones designed for long-term use.',
     images: [
       {
         src: '/images/collections/granites-1.webp',
@@ -189,7 +189,7 @@ const bathwares = [
   {
     title: 'Bathware',
     description:
-      'Searock’s bathware collection blends style and functionality, offering elegant, durable solutions that make every bath space refreshing.',
+      'Modern, reliable bathware that adds comfort to everyday living.',
     images: [
       {
         src: '/images/collections/bathware-1.webp',
@@ -245,8 +245,7 @@ const CollectionsSection: React.FC = () => {
               'sm:text-lg md:text-xl lg:text-2xl'
             )}
           >
-            Discover our extensive range of flooring solutions, each crafted to deliver exceptional quality, durability,
-            and aesthetic appeal for your space.
+            Discover products carefully selected for quality, comfort, and lasting beauty—everything your home needs, made simple.
           </p>
         </div>
 

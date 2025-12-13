@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import { fetchBlogs } from '@/lib/cms';
+import type { BlogPost } from '@/lib/cms';
 
 export const metadata = {
   title: 'Tile Design & Installation Tips • Searock Tile Gallery Blogs',
@@ -45,138 +47,24 @@ export const metadata = {
   },
 };
 
-type BlogPost = {
-  id: string;
-  title: string;
-  summary: string;
-  category: string;
-  readTime: string;
-  author: string;
-  date: string;
-  image: string;
-  content: string[];
-};
+ 
 
-const blogPosts: BlogPost[] = [
-  {
-    id: 'tile-installation-guide',
-    title: 'The Ultimate Guide to Tile Installation',
-    summary: 'Everything you need to know for a perfect tile finish — from prep to polish.',
-    category: 'Installation',
-    readTime: '8 min read',
-    author: 'Mike Chen',
-    date: '3/10/2024',
-    image: '/images/blogs/1.jpg',
-    content: [
-      'Learn tools, adhesives, and subfloor prep to avoid lippage and hollow spots.',
-      'We cover layout planning, cutting methods, and grouting for a durable finish.'
-    ],
-  },
-  {
-    id: 'choose-right-tiles',
-    title: 'Choosing the Right Tiles for Your Space',
-    summary: 'Find the perfect blend of style, durability, and function for every room.',
-    category: 'Installation',
-    readTime: '8 min read',
-    author: 'Mike Chen',
-    date: '3/10/2024',
-    image: '/images/blogs/2.jpg',
-    content: [
-      'Compare porcelain, ceramic, and stone for different rooms and traffic levels.',
-      'Balance slip resistance, water absorption, and style to get the look you want.'
-    ],
-  },
-  {
-    id: 'trends-modern-interiors',
-    title: 'Designing a Spa-like Bathroom at Home',
-    summary: 'Discover the latest designs transforming homes and commercial spaces.',
-    category: 'Design',
-    readTime: '7 min read',
-    author: 'Mike Chen',
-    date: '3/10/2024',
-    image: '/images/products/bath.jpg',
-    content: [
-      'Explore large-format slabs, textured finishes, and warm neutral palettes.',
-      'See how statement patterns elevate kitchens, baths, and living spaces.'
-    ],
-  },
-  {
-    id: 'bathroom-styles',
-    title: 'Tile Trends That Elevate Modern Interiors',
-    summary: 'Create a serene retreat with materials and finishes that last.',
-    category: 'Design',
-    readTime: '6 min read',
-    author: 'Mike Chen',
-    date: '3/10/2024',
-    image: '/images/blogs/4.webp',
-    content: [
-      'Layer natural stone, warm woods, and matte fittings to create a calm retreat.',
-      'Ventilation, lighting, and slip-resistant surfaces complete the spa feel.'
-    ],
-  },
-  {
-    id: 'grout-care',
-    title: 'Grout Care Essentials',
-    summary: 'Keep your tiles looking new with simple maintenance routines.',
-    category: 'Care',
-    readTime: '5 min read',
-    author: 'Mike Chen',
-    date: '3/10/2024',
-    image: '/images/blogs/5.jpg',
-    content: [
-      'Pick the right grout type and sealing schedule to resist stains.',
-      'Simple weekly routines keep joints clean and hygienic.'
-    ],
-  },
-  {
-    id: 'stone-vs-porcelain',
-    title: 'Natural Stone vs. Porcelain: What to Choose?',
-    summary: 'Understand pros and cons to pick the right surface for your project.',
-    category: 'Guide',
-    readTime: '9 min read',
-    author: 'Mike Chen',
-    date: '3/10/2024',
-    image: '/images/blogs/6.jpg',
-    content: [
-      'Understand porosity, maintenance, and cost over time.',
-      'A decision matrix helps match material to budget and performance.'
-    ],
-  },
-  {
-    id: 'kitchen-flooring',
-    title: 'Kitchen Flooring That Works Hard',
-    summary: 'Durable, beautiful choices that stand up to heavy use.',
-    category: 'Guide',
-    readTime: '6 min read',
-    author: 'Mike Chen',
-    date: '3/10/2024',
-    image: '/images/blogs/8.avif',
-    content: [
-      'Shortlist materials that handle spills, heat, and heavy footfall.',
-      'Installation tips extend lifespan and make cleaning easier.'
-    ],
-  },
-  {
-    id: 'bathware-upgrades',
-    title: 'Essential Bathware Upgrades for Comfort',
-    summary: 'Enhance daily routines with fixtures that combine form and function.',
-    category: 'Bathware',
-    readTime: '6 min read',
-    author: 'Mike Chen',
-    date: '3/10/2024',
-    image: '/images/blogs/7.jpeg',
-    content: [
-      'Upgrade faucets, showers, and sanitaryware for efficiency and comfort.',
-      'Smart storage and accessories make everyday tasks effortless.'
-    ],
-  },
-];
+async function loadCMSBlogs(): Promise<BlogPost[] | null> {
+  try {
+    const posts = await fetchBlogs();
+    return posts;
+  } catch {
+    return null;
+  }
+}
+ 
+
 
 const BlogCard = ({ post }: { post: BlogPost }) => (
   <article className="rounded-2xl bg-white shadow-sm border border-gray-200 overflow-hidden">
     <div className="relative w-full h-56 md:h-64 lg:h-72">
       <Image
-        src={post.image}
+        src={post.image || '/images/blogs/1.jpg'}
         alt={post.title}
         fill
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -204,9 +92,18 @@ const BlogCard = ({ post }: { post: BlogPost }) => (
   </article>
 );
 
-export default function BlogsPage() {
-  const first = blogPosts.slice(0, 4);
-  const rest = blogPosts.slice(4);
+export default async function BlogsPage() {
+  const cmsPosts = await loadCMSBlogs();
+  const combined = cmsPosts ?? [];
+  const seen = new Set<string>();
+  const source = combined.filter((post) => {
+    const key = post.id;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+  const first = source.slice(0, 4);
+  const rest = source.slice(4);
 
   return (
     <main className="flex flex-col min-h-screen bg-white">
@@ -228,34 +125,38 @@ export default function BlogsPage() {
           </div>
 
           {/* Peer toggle for more blogs */}
-          <input id="show-more-blogs" type="checkbox" className="peer sr-only" />
-          <div className="mt-8 flex justify-center peer-checked:hidden">
-            <label htmlFor="show-more-blogs" className="inline-flex cursor-pointer items-center gap-2 rounded-lg bg-primary px-6 py-3 text-white text-sm font-medium hover:bg-[#382b60]">
-              Read More Blogs →
-            </label>
-          </div>
+          {rest.length > 0 && (
+            <>
+              <input id="show-more-blogs" type="checkbox" className="peer sr-only" />
+              <div className="mt-8 flex justify-center peer-checked:hidden">
+                <label htmlFor="show-more-blogs" className="inline-flex cursor-pointer items-center gap-2 rounded-lg bg-primary px-6 py-3 text-white text-sm font-medium hover:bg-[#382b60]">
+                  Read More Blogs →
+                </label>
+              </div>
 
-          <div className="mt-10 hidden peer-checked:block">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-              {rest.map((post) => (
-                <BlogCard key={post.id} post={post} />
-              ))}
-            </div>
-            <div className="mt-8 flex justify-center">
-              <label htmlFor="show-more-blogs" className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-gray-300 px-6 bg-primary py-3 text-white text-sm font-medium">
-                Show Less
-              </label>
-            </div>
-          </div>
+              <div className="mt-10 hidden peer-checked:block">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+                  {rest.map((post) => (
+                    <BlogCard key={post.id} post={post} />
+                  ))}
+                </div>
+                <div className="mt-8 flex justify-center">
+                  <label htmlFor="show-more-blogs" className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-gray-300 px-6 bg-primary py-3 text-white text-sm font-medium">
+                    Show Less
+                  </label>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </section>
 
       {/* Blog Modals */}
-      {blogPosts.map((post) => (
+      {source.map((post) => (
         <div
           key={post.id}
           id={`blog-${post.id}`}
-          className="modal fixed inset-0 z-[70] hidden flex items-start md:items-center justify-center p-4"
+          className="modal fixed inset-0 z-[70] items-start md:items-center justify-center p-4"
           aria-hidden="true"
         >
           <a href="#" className="absolute inset-0 bg-black/60 z-0" aria-label="Close"></a>
@@ -270,7 +171,7 @@ export default function BlogsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="relative h-60 md:h-full">
                 <Image
-                  src={post.image}
+                  src={post.image || '/images/blogs/1.jpg'}
                   alt={post.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -285,7 +186,7 @@ export default function BlogsPage() {
                 <h3 className="mt-3 text-2xl md:text-3xl font-semibold text-primary">{post.title}</h3>
                 <p className="mt-3 text-sm md:text-base text-gray-700 leading-relaxed">{post.summary}</p>
                 <div className="mt-4 space-y-3 text-sm md:text-base text-gray-700 leading-relaxed">
-                  {post.content.map((para, i) => (
+                  {post.content.map((para: string, i: number) => (
                     <p key={i}>{para}</p>
                   ))}
                 </div>

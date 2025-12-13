@@ -182,10 +182,10 @@ const StatCard: React.FC<StatCardProps> = ({ value, suffix, label, index }) => {
 
 const StatsSection: React.FC = () => {
   const stats = [
-    { value: 10, suffix: 'K+', label: 'Homes Transformed' },
-    { value: 50, suffix: 'K+', label: 'Happy Customers' },
-    { value: 200, suffix: '+', label: 'Product Varieties' },
-    { value: 100, suffix: '%', label: 'Satisfaction Rate' },
+    { value: 30, suffix: '+', label: 'Experience in caring for home' },
+    { value: 10000, suffix: '+', label: 'Homes Guided & Supported' },
+    { value: 2000, suffix: '+', label: 'Product Options for Every Need' },
+    { value: 4.8, suffix: '/5', label: 'Customer Satisfaction Rate' },
   ];
 
   return (
@@ -203,9 +203,10 @@ const StatsSection: React.FC = () => {
           )}
           style={{ color: 'var(--color-primary)' }}
         >
-          Laying the Foundation for
+          {/* Laying the Foundation for
           <br />
-          Beautiful Living
+          Beautiful Living */}
+          Our Journey of Guiding Families
         </h2>
 
         {/* Stats Grid - 2 column layout */}

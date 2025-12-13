@@ -1,11 +1,11 @@
 import dynamic from 'next/dynamic';
-import HeroSection from "./_components/home/herosection";
+import HeroSectionCMS from "./_components/home/herosection-cms";
 import HeroAbout from "./_components/home/heroabout";
-import HeroStory from "./_components/home/hero-story";
 import CollectionsSection from "./_components/home/collections-section";
 import PartnersSection from "./_components/home/partners-section";
-import TestimonialsSection from "./_components/home/testimonials-section";
+import TestimonialsSectionWrapper from "./_components/home/testimonials-section-wrapper";
 import HomeContact from "./_components/shared/home-contact";
+import HeroStory from './_components/home/hero-story';
 
 // Dynamic import for below-the-fold content
 // This reduces initial bundle size and improves Time to Interactive (TTI)
@@ -37,13 +37,13 @@ const StatsSection = dynamic(
 export default function LandingPage() {
   return (
     <>
-      <HeroSection />
+      <HeroSectionCMS />
       <HeroAbout />
       <StatsSection />
       <HeroStory />
       <CollectionsSection />
       <PartnersSection />
-      <TestimonialsSection />
+      <TestimonialsSectionWrapper />
       <HomeContact />
     </>
   );
