@@ -31,7 +31,7 @@ const HeroAbout: React.FC = () => {
             setCurrent(prev => (prev + 1) % slides.length);
         }, 2000);
         return () => clearInterval(id);
-    }, []);
+    }, [slides.length]);
 
     return (
     <section

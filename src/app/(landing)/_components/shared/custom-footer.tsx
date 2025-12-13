@@ -1,4 +1,3 @@
-import ContactSection from "./contact-section"
 import Footer from "./footer"
 
 

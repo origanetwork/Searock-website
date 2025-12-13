@@ -39,8 +39,8 @@ interface PartnerLogo {
  * Each logo card has a light gray background with unique rounded corners.
  */
 const PartnersSection: React.FC = () => {
-  // Partner logos data - placeholder logos (replace with actual partner logos)
-  const partners: PartnerLogo[] = [
+  // Partner logos data - memoized so it doesn't change across renders
+  const partners: PartnerLogo[] = useMemo(() => ([
     {
       src: '/images/partners/haique.png',
       alt: 'IPSUM partner logo',
@@ -71,7 +71,7 @@ const PartnersSection: React.FC = () => {
       alt: 'Logoipsum partner logo',
       name: 'Logoipsum',
     },
-  ];
+  ]), []);
 
   /**
    * Shape per card to match design
@@ -126,7 +126,7 @@ const PartnersSection: React.FC = () => {
     return out;
   }, [partners, startIndex]);
   // function to advance page with smooth animation
-  const advance = () => {
+  const advance = React.useCallback(() => {
     if (!gridRef.current || partners.length <= pageSize) return;
     const grid = gridRef.current;
     const tl = gsap.timeline();
@@ -135,7 +135,7 @@ const PartnersSection: React.FC = () => {
         setStartIndex((prev) => (prev + pageSize) % partners.length);
       })
       .to(grid, { y: 0, opacity: 1, duration: 0.45, ease: 'power2.out' });
-  };
+  }, [partners.length, pageSize]);
 
   // animate in cards on index change (staggered translate)
   useEffect(() => {
@@ -192,7 +192,7 @@ const PartnersSection: React.FC = () => {
       rotationTweenRef.current?.kill();
       rotationTweenRef.current = null;
     };
-  }, []);
+  }, [advance]);
 
   return (
     <section
