@@ -37,8 +37,8 @@ const Navbar = () => {
   return (
     <>
       {/* Sticky header */}
-      <header className="fixed inset-x-0 top-0 z-50 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-        <nav className="relative mx-auto flex h-16 md:h-20 max-w-screen-xl items-center justify-between px-4">
+      <header className="fixed inset-x-0 top-0 z-50 bg-white/90 backdrop-blur supports-backdrop-filter:bg-white/60">
+        <nav className="relative mx-auto flex h-16 md:h-20 max-w-7xl items-center justify-between px-4">
           {/* Logo: centered, larger size */}
           <Link href="/" className="flex items-center justify-start" aria-label="Searock Home">
             <Image
@@ -57,7 +57,7 @@ const Navbar = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-[family-name:var(--font-family-amsi-cond-600)] uppercase tracking-wide text-slate-700 hover:text-secondary text-base lg:text-lg py-2"
+                className="font-family-amsi-cond-600 uppercase tracking-wide text-slate-700 hover:text-secondary text-base lg:text-lg py-2"
               >
                 {link.name}
               </Link>

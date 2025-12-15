@@ -39,7 +39,7 @@ const HeroAbout: React.FC = () => {
         aria-label="About Searock section"
     >
         {/* gradiant overlay */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/90 via-white/50 to-white/90"></div>
+        <div className="absolute inset-0 z-10 bg-linear-to-b from-white/90 via-white/50 to-white/90"></div>
 
         {/* Background Image - Optimized with next/image for performance */}
         <div className="absolute inset-0 z-0">
@@ -61,7 +61,7 @@ const HeroAbout: React.FC = () => {
             <h2
                 className={clsx(
                     "mb-6 text-4xl font-bold leading-tight tracking-normal",
-                    "font-['Amsi_Pro_Condensed_700']",
+                    "font-family-amsi-cond-700",
                     "sm:text-5xl md:mb-8 md:text-6xl lg:mb-10 lg:text-7xl"
                 )}
                 style={{ color: 'var(--color-primary)' }} // Primary brand color (#3C3063)
@@ -73,7 +73,7 @@ const HeroAbout: React.FC = () => {
             <p
                 className={clsx(
                     "mb-12 max-w-3xl text-lg leading-relaxed text-primary/90",
-                    "font-['Amsi_Pro_Condensed_400']",
+                    "font-family-amsi-cond-400",
                     "sm:text-lg md:mb-16 md:text-xl lg:mb-20 lg:text-2xl lg:leading-relaxed"
                 )}
                
@@ -164,7 +164,7 @@ Our purpose is simple: helping you choose the right products so your home-buildi
                 <p
                     className={clsx(
                         "text-2xl font-semibold tracking-wide",
-                        "font-['Amsi_Pro_Condensed_600']",
+                        "font-family-amsi-cond-600",
                         "sm:text-3xl md:text-4xl lg:text-5xl"
                     )}
                     style={{ color: 'var(--color-primary)' }}
@@ -212,7 +212,7 @@ Our purpose is simple: helping you choose the right products so your home-buildi
                         <p
                             className={clsx(
                                 "mt-8 text-2xl font-semibold tracking-wide whitespace-nowrap",
-                                "font-['Amsi_Pro_Condensed_600']",
+                                "font-family-amsi-cond-600",
                                 "lg:text-3xl"
                             )}
                             style={{ color: 'var(--color-primary)' }}

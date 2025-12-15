@@ -26,7 +26,7 @@ const HeroSection: React.FC = () => {
           className="hidden sm:block object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-transparent to-transparent sm:from-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-white/70 via-transparent to-transparent sm:from-transparent" />
 
       </div>
 
@@ -70,20 +70,20 @@ const HeroSection: React.FC = () => {
           )}
         >
           <span 
-            className="font-['Amsi_Pro_Condensed_600']"
+            className="font-family-amsi-cond-600"
             style={{ color: 'var(--color-primary)' }}
           >
             Your{' '}
           </span>
           {/* "Flooring" highlighted in secondary orange color */}
           <span 
-            className="font-['Amsi_Pro_Condensed_700']"
+            className="font-family-amsi-cond-700"
             style={{ color: 'var(--color-secondary)' }}
           >
             Flooring
           </span>
           <span 
-            className="font-['Amsi_Pro_Condensed_600']"
+            className="font-family-amsi-cond-600"
             style={{ color: 'var(--color-primary)' }}
           >
             {' '}Partner
@@ -95,7 +95,7 @@ const HeroSection: React.FC = () => {
           href="/contact#location-heading"
           className={clsx(
             'group inline-flex items-center justify-center gap-3 px-4 py-3 text-lg font-semibold transition-all duration-300',
-            "font-['Amsi_Pro_Condensed_600']",
+            "font-family-amsi-cond-600",
             'bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/40',
             'w-full rounded-bl-3xl shadow-lg hover:shadow-xl',
             'focus:outline-none focus:ring-4 focus:ring-white/30',
@@ -129,7 +129,7 @@ const HeroSection: React.FC = () => {
             />
           </svg>
           
-          <span className="font-['Amsi_Pro_Condensed_700']"
+          <span className="font-family-amsi-cond-700"
           >
             Locate Store
           </span>

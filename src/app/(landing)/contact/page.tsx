@@ -12,7 +12,7 @@ export default function ContactPage() {
       {/* Top header band under navbar */}
       <section className="w-full bg-primary text-white">
         <div className="mx-auto max-w-screen-sm px-6 py-10">
-          <h1 className="text-center font-['Amsi_Pro_Condensed_700'] text-4xl md:text-5xl">Contact Us</h1>
+          <h1 className="text-center font-family-amsi-cond-700 text-4xl md:text-5xl">Contact Us</h1>
           <p className="mt-4 text-center text-sm md:text-base lg:text-lg leading-6 opacity-95">
             Feel free to reach out with any questions or ideas — we&apos;re here to help you build better homes.
           </p>
@@ -24,10 +24,10 @@ export default function ContactPage() {
 
       {/* Large location map below (full-width responsive) */}
       <section aria-labelledby="location-heading" className="w-full">
-        <div className="mx-auto max-w-screen-xl px-4 pt-6 pb-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 pt-6 pb-12 sm:px-6 lg:px-8">
           <h2
             id="location-heading"
-            className="mb-4 text-center font-[family-name:var(--font-family-amsi-cond-700)] text-2xl font-bold uppercase tracking-wide text-white sm:text-3xl"
+            className="mb-4 text-center font-family-amsi-cond-700 text-2xl font-bold uppercase tracking-wide text-white sm:text-3xl"
           >
             Our Location
           </h2>

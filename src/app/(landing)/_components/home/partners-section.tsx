@@ -229,7 +229,7 @@ const PartnersSection: React.FC = () => {
           <h2
             className={clsx(
               'mb-4 text-4xl font-bold leading-tight tracking-normal text-white',
-              "font-['Amsi_Pro_Condensed_700']",
+              "font-family-amsi-cond-700",
               'sm:text-5xl md:mb-6 md:text-6xl lg:text-7xl'
             )}
           >
@@ -240,7 +240,7 @@ const PartnersSection: React.FC = () => {
           <p
             className={clsx(
               'mx-auto max-w-3xl text-lg leading-relaxed text-white/80',
-              "font-['Amsi_Pro_Condensed_400']",
+              "font-family-amsi-cond-400",
               'sm:text-lg md:text-xl lg:text-2xl'
             )}
           >

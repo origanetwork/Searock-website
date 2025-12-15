@@ -73,7 +73,7 @@ export default function HomeContact() {
 
             <button
               type="submit"
-              className="w-full rounded-bl-3xl bg-[#F9811E] px-6 py-3.5 font-bold uppercase tracking-wide text-white shadow-lg transition-all hover:shadow-xl hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary"
+              className="w-full rounded-bl-3xl bg-secondary px-6 py-3.5 font-bold uppercase tracking-wide text-white shadow-lg transition-all hover:shadow-xl hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary"
             >
               Submit
             </button>

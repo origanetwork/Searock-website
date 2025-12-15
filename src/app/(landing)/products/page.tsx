@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+ 
 
 export const metadata = {
   title: 'Our Products • Searock',
@@ -66,7 +66,7 @@ const CategoryCard = ({ category }: { category: ProductCategory }) => (
 
       {/* Overlay with the category name - it remains static */}
       <div className="absolute inset-0 flex items-end bg-black/30">
-        <h2 className="p-4 ml-4 md:ml-6 font-['Amsi_Pro_Condensed_700'] text-4xl text-white">
+        <h2 className="p-4 ml-4 md:ml-6 font-family-amsi-cond-700 text-4xl text-white">
           {category.name}
         </h2>
       </div>
@@ -82,20 +82,20 @@ const CategoryCard = ({ category }: { category: ProductCategory }) => (
       <ul className="space-y-2 mb-6">
         {category.features.map((feature, index) => (
           <li key={index} className="flex items-start">
-            <span className="inline-block h-2 w-2 flex-shrink-0 mt-1 mr-3 rounded-full bg-orange-500" />
+            <span className="inline-block h-2 w-2 shrink-0 mt-1 mr-3 rounded-full bg-orange-500" />
             <span className="text-sm font-medium text-gray-800">{feature}</span>
           </li>
         ))}
       </ul>
 
       <div className="flex justify-end">
-        <Link
-          href={category.link}
+        <a
+          href={`#modal-${toSlug(category.name)}`}
           className="inline-flex items-center gap-1 text-primary font-medium hover:underline"
         >
           Read more
           <span aria-hidden>→</span>
-        </Link>
+        </a>
       </div>
 
     </div>
@@ -110,7 +110,7 @@ export default function ProductsPage() {
       {/* Products Hero Section */}
       <section className="w-full bg-primary text-white">
         <div className="mx-auto max-w-screen-sm px-6 py-10 md:py-16">
-          <h1 className="text-center font-['Amsi_Pro_Condensed_700'] text-4xl md:text-5xl lg:text-6xl">Our Products</h1>
+          <h1 className="text-center font-family-amsi-cond-700 text-4xl md:text-5xl lg:text-6xl">Our Products</h1>
           <p className="mt-4 text-center text-sm md:text-base lg:text-lg leading-6 opacity-95 max-w-lg mx-auto">
             Discover our comprehensive range of premium flooring solutions designed to transform your space.
           </p>
@@ -119,7 +119,7 @@ export default function ProductsPage() {
 
       {/* Product Categories Grid */}
       <section className="py-10 md:py-16">
-        <div className="mx-auto max-w-screen-xl px-6">
+        <div className="mx-auto max-w-7xl px-6">
           {/* Grid for responsiveness: 1 column on mobile, 2 on medium, 3 on large */}
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {productCategories.map((category) => (
@@ -131,13 +131,13 @@ export default function ProductsPage() {
 
       {/* Guidance at Every Step - Feature Block */}
       <section className="w-full py-10 md:py-16">
-        <div className="mx-auto max-w-screen-xl px-6">
+        <div className="mx-auto max-w-7xl px-6">
           <div className="border-3 border-orange-500 rounded-bl-[3rem] p-6 max-w-2xl mx-auto text-center bg-white">
             {/* 2-slide CSS carousel (3s per slide) */}
             <div className="carousel relative min-h-[170px] md:min-h-[160px]">
               {/* Slide 1 */}
               <div className="carousel-slide is-first absolute inset-0">
-                <h2 className="text-center font-['Amsi_Pro_Condensed_700'] text-2xl md:text-3xl lg:text-4xl text-primary">
+                <h2 className="text-center font-family-amsi-cond-700 text-2xl md:text-3xl lg:text-4xl text-primary">
                   Wide Collections to Explore
                 </h2>
                 <p className="mt-3 text-sm md:text-base text-gray-700 leading-relaxed">
@@ -147,7 +147,7 @@ export default function ProductsPage() {
 
               {/* Slide 2 */}
               <div className="carousel-slide is-second absolute inset-0">
-                <h2 className="text-center font-['Amsi_Pro_Condensed_700'] text-2xl md:text-3xl lg:text-4xl text-primary">
+                <h2 className="text-center font-family-amsi-cond-700 text-2xl md:text-3xl lg:text-4xl text-primary">
                   Guidance at Every Step
                 </h2>
                 <p className="mt-3 text-sm md:text-base text-gray-700 leading-relaxed">
@@ -157,7 +157,7 @@ export default function ProductsPage() {
 
               {/* Slide 3 */}
               <div className="carousel-slide is-third absolute inset-0">
-                <h2 className="text-center font-['Amsi_Pro_Condensed_700'] text-2xl md:text-3xl lg:text-4xl text-primary">
+                <h2 className="text-center font-family-amsi-cond-700 text-2xl md:text-3xl lg:text-4xl text-primary">
                   Quality You Can Trust
                 </h2>
                 <p className="mt-3 text-sm md:text-base text-gray-700 leading-relaxed">
@@ -174,11 +174,11 @@ export default function ProductsPage() {
         <div
           key={category.name}
           id={`modal-${toSlug(category.name)}`}
-          className="modal fixed inset-0 z-50 hidden items-center justify-center p-4"
+          className="modal fixed inset-0 z-50 items-center justify-center p-4"
           aria-hidden="true"
         >
           <a href="#" className="absolute inset-0 bg-black/60 z-0" aria-label="Close"></a>
-          <div className="relative z-10 w-full max-w-4xl bg-white rounded-br-[2rem] shadow-2xl">
+          <div className="relative z-10 w-full max-w-4xl bg-white rounded-br-4xl shadow-2xl">
             {/* Close button */}
             <a
               href="#"
@@ -203,7 +203,7 @@ export default function ProductsPage() {
 
               {/* Content */}
               <div className="p-6 md:p-8">
-                <h3 className="font-['Amsi_Pro_Condensed_700'] text-3xl text-primary">{category.name}</h3>
+                <h3 className="font-family-amsi-cond-700 text-3xl text-primary">{category.name}</h3>
                 <p className="mt-3 text-sm md:text-base text-gray-700 leading-relaxed">
                   {category.description}
                 </p>
@@ -211,7 +211,7 @@ export default function ProductsPage() {
                 <ul className="mt-4 space-y-2">
                   {category.features.map((f, i) => (
                     <li key={i} className="flex items-start text-sm text-gray-800">
-                      <span className="mt-1 mr-3 inline-block h-2 w-2 flex-shrink-0 rounded-full bg-orange-500" />
+                      <span className="mt-1 mr-3 inline-block h-2 w-2 shrink-0 rounded-full bg-orange-500" />
                       <span className="font-medium">{f}</span>
                     </li>
                   ))}

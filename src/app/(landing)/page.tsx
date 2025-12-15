@@ -16,7 +16,7 @@ const StatsSection = dynamic(
     loading: () => (
       // Optional: Skeleton loader while component loads
       // Remove this if you want instant render without placeholder
-      <div className="relative w-full overflow-hidden bg-gradient-to-b from-gray-50 to-white py-10 md:py-20 lg:py-24">
+      <div className="relative w-full overflow-hidden bg-linear-to-b from-gray-50 to-white py-10 md:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
           <div className="h-20 w-3/4 mx-auto mb-10 bg-gray-200 animate-pulse rounded-lg" />
           <div className="grid grid-cols-2 gap-3 px-2 mb-10 sm:gap-6 md:gap-8 lg:gap-10">

@@ -146,7 +146,7 @@ const StatCard: React.FC<StatCardProps> = ({ value, suffix, label, index }) => {
           ref={numberRef}
           className={clsx(
             'text-5xl font-bold leading-none',
-            "font-['Amsi_Pro_Condensed_700']",
+            "font-family-amsi-cond-700",
             'sm:text-6xl md:text-7xl lg:text-8xl'
           )}
           style={{ color: 'var(--color-primary)' }}
@@ -156,7 +156,7 @@ const StatCard: React.FC<StatCardProps> = ({ value, suffix, label, index }) => {
         <span
           className={clsx(
             'ml-1 text-4xl font-bold',
-            "font-['Amsi_Pro_Condensed_700']",
+            "font-family-amsi-cond-700",
             'sm:text-5xl md:text-6xl lg:text-7xl'
           )}
           style={{ color: 'var(--color-primary)' }}
@@ -169,7 +169,7 @@ const StatCard: React.FC<StatCardProps> = ({ value, suffix, label, index }) => {
       <p
         className={clsx(
           'text-center text-xl font-semibold leading-snug',
-          "font-['Amsi_Pro_Condensed_600']",
+          "font-family-amsi-cond-600",
           'sm:text-2xl md:text-3xl lg:text-4xl'
         )}
         style={{ color: 'var(--color-secondary)' }}
@@ -190,7 +190,7 @@ const StatsSection: React.FC = () => {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-gradient-to-b from-gray-50 to-white py-10 md:py-20 lg:py-24"
+      className="relative w-full overflow-hidden bg-linear-to-b from-gray-50 to-white py-10 md:py-20 lg:py-24"
       aria-label="Company statistics"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
@@ -198,7 +198,7 @@ const StatsSection: React.FC = () => {
         <h2
           className={clsx(
             'text-center text-3xl font-bold leading-tight tracking-normal',
-            "font-['Amsi_Pro_Condensed_700']",
+            "font-family-amsi-cond-700",
             'sm:text-4xl md:mb-16 md:text-5xl lg:mb-20 lg:text-6xl'
           )}
           style={{ color: 'var(--color-primary)' }}

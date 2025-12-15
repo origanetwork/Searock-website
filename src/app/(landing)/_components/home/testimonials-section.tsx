@@ -129,7 +129,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
       <h3
         className={clsx(
           'mb-2 text-center text-2xl font-bold leading-tight',
-          "font-['Amsi_Pro_Condensed_700']",
+          "font-family-amsi-cond-700",
           'text-gray-900 dark:text-gray-800',
           'sm:text-3xl md:mb-8 md:text-4xl'
         )}
@@ -142,7 +142,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
         <p
           className={clsx(
             'text-center text-base leading-relaxed text-gray-800',
-            "font-['Amsi_Pro_Condensed_400']",
+            "font-family-amsi-cond-400",
             'dark:text-gray-700',
             'sm:text-lg md:text-xl lg:text-2xl'
           )}
@@ -214,7 +214,7 @@ const TestimonialsSection: React.FC<{ testimonials: Testimonial[] }> = ({ testim
   return (
     <section
       ref={sectionRef}
-      className="relative w-full overflow-hidden bg-gradient-to-b from-white to-gray-50 py-10 md:py-16 lg:py-20"
+      className="relative w-full overflow-hidden bg-linear-to-b from-white to-gray-50 py-10 md:py-16 lg:py-20"
       aria-label="Customer testimonials section"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
@@ -225,7 +225,7 @@ const TestimonialsSection: React.FC<{ testimonials: Testimonial[] }> = ({ testim
             data-header
             className={clsx(
               'mb-4 text-4xl font-bold leading-tight tracking-normal',
-              "font-['Amsi_Pro_Condensed_700']",
+              "font-family-amsi-cond-700",
               'sm:text-5xl md:mb-6 md:text-6xl lg:text-7xl'
             )}
             style={{ color: 'var(--color-secondary)' }}
@@ -238,7 +238,7 @@ const TestimonialsSection: React.FC<{ testimonials: Testimonial[] }> = ({ testim
             data-header
             className={clsx(
               'mx-auto max-w-3xl text-lg leading-relaxed text-gray-600',
-              "font-['Amsi_Pro_Condensed_400']",
+              "font-family-amsi-cond-400",
               'dark:text-gray-500',
               'sm:text-xl md:text-2xl lg:text-3xl'
             )}

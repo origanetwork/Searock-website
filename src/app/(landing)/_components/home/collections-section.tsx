@@ -54,7 +54,7 @@ const CollectionCard: React.FC<CollectionCardProps> = ({
       <h3
         className={clsx(
           'mb-4 text-3xl font-bold uppercase tracking-wide',
-          "font-['Amsi_Pro_Condensed_700']",
+          'font-family-amsi-cond-700',
           'sm:text-4xl md:mb-5 md:text-5xl lg:text-6xl'
         )}
         style={{ color: 'var(--color-secondary)' }}
@@ -66,7 +66,7 @@ const CollectionCard: React.FC<CollectionCardProps> = ({
       <p
         className={clsx(
           'mb-8 text-lg leading-relaxed text-gray-700',
-          "font-['Amsi_Pro_Condensed_400']",
+          'font-family-amsi-cond-400',
           'sm:text-lg md:mb-10 md:text-xl lg:mb-12 lg:text-2xl'
         )}
       >
@@ -76,7 +76,7 @@ const CollectionCard: React.FC<CollectionCardProps> = ({
       {/* Image Gallery - 3 Images in Row */}
       <div className="mb-6 grid grid-cols-3 gap-1 sm:grid-cols-3 sm:gap-4 md:mb-8 md:gap-5">
         {/* Left Image - Rounded Bottom-Left Corner */}
-        <div className="relative aspect-[2/4] w-full overflow-hidden rounded-bl-[2rem] rounded-xs sm:rounded-bl-[3rem] md:rounded-bl-[4rem]">
+        <div className="relative aspect-2/4 w-full overflow-hidden rounded-bl-4xl rounded-xs sm:rounded-bl-[3rem] md:rounded-bl-[4rem]">
           <Image
             src={images[0].src}
             alt={images[0].alt}
@@ -88,7 +88,7 @@ const CollectionCard: React.FC<CollectionCardProps> = ({
         </div>
 
         {/* Center Image - Rectangular (No Rounded Corners) */}
-        <div className="relative aspect-[2/4] w-full rounded-xs overflow-hidden">
+        <div className="relative aspect-2/4 w-full rounded-xs overflow-hidden">
           <Image
             src={images[1].src}
             alt={images[1].alt}
@@ -100,7 +100,7 @@ const CollectionCard: React.FC<CollectionCardProps> = ({
         </div>
 
         {/* Right Image - Rounded Top-Right Corner */}
-        <div className="relative aspect-[2/4] w-full overflow-hidden">
+        <div className="relative aspect-2/4 w-full overflow-hidden">
           <Image
             src={images[2].src}
             alt={images[2].alt}
@@ -118,7 +118,7 @@ const CollectionCard: React.FC<CollectionCardProps> = ({
           href="/gallery"
           className={clsx(
             'group inline-flex items-center justify-center gap-3 px-4 py-3 text-lg font-semibold transition-all duration-300',
-            "font-['Amsi_Pro_Condensed_600']",
+            'font-family-amsi-cond-600',
             'bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/40',
             'w-full rounded-bl-3xl shadow-lg hover:shadow-xl',
             'focus:outline-none focus:ring-4 focus:ring-primary/30',
@@ -229,7 +229,7 @@ const CollectionsSection: React.FC = () => {
           <h2
             className={clsx(
               'mb-4 text-4xl font-bold leading-tight tracking-normal',
-              "font-['Amsi_Pro_Condensed_700']",
+              'font-family-amsi-cond-700',
               'sm:text-5xl md:mb-6 md:text-6xl lg:text-7xl'
             )}
             style={{ color: 'var(--color-primary)' }}
@@ -241,7 +241,7 @@ const CollectionsSection: React.FC = () => {
           <p
             className={clsx(
               'mx-auto max-w-3xl text-lg leading-relaxed text-gray-600',
-              "font-['Amsi_Pro_Condensed_400']",
+              'font-family-amsi-cond-400',
               'sm:text-lg md:text-xl lg:text-2xl'
             )}
           >

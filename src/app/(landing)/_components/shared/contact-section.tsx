@@ -76,15 +76,15 @@ export default function ContactSection() {
 
   return (
     <section className="w-full px-4 pt-12 pb-6 sm:px-6 lg:px-8 text-white" aria-labelledby="contact-heading">
-      <div className="mx-auto max-w-screen-xl">
+      <div className="mx-auto max-w-7xl">
         <div className="lg:grid lg:grid-cols-2 lg:gap-10">
           {/* ===== Left: Contact Info Cards ===== */}
           <div className="w-full max-w-md space-y-4 lg:max-w-none">
-            <h2 id="contact-heading" className="mt-[15px] font-[family-name:var(--font-family-amsi-cond-700)] text-2xl text-orange-400 sm:text-3xl">Contact</h2>
+            <h2 id="contact-heading" className="mt-[15px] font-family-amsi-cond-700 text-2xl text-orange-400 sm:text-3xl">Contact</h2>
             
             {/* Phone Card */}
             <div className="flex items-start gap-4 rounded-bl-3xl bg-white/95 p-4 shadow ring-1 ring-black/5">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#5F5387] via-primary to-[#3C3063] text-white shadow-md">
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-[#5F5387] via-primary to-primary text-white shadow-md">
                 <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 18a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 3.32 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.86.33 1.7.62 2.5a2 2 0 0 1-.45 2.11L8 9a16 16 0 0 0 7 7l.67-1.28a2 2 0 0 1 2.11-.45c.8.29 1.64.5 2.5.62A2 2 0 0 1 22 16.92z"/></svg>
               </span>
               <div>
@@ -96,7 +96,7 @@ export default function ContactSection() {
 
             {/* Email Card */}
             <div className="flex items-start gap-4 rounded-bl-3xl bg-white/95 p-4 shadow ring-1 ring-black/5">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#5F5387] via-primary to-[#3C3063] text-white shadow-md">
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-[#5F5387] via-primary to-primary text-white shadow-md">
                 <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
               </span>
               <div>
@@ -108,7 +108,7 @@ export default function ContactSection() {
 
             {/* Location Card */}
             <div className="flex items-center gap-4 rounded-bl-3xl bg-white/95 p-4 shadow ring-1 ring-black/5">
-              <span className="inline-flex h-12 w-12 min-w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#5F5387] via-primary to-[#3C3063] text-white shadow-md">
+              <span className="inline-flex h-12 w-12 min-w-12 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-[#5F5387] via-primary to-primary text-white shadow-md">
                 <svg 
                   className="h-6 w-6" 
                   viewBox="0 0 24 24" 
@@ -131,7 +131,7 @@ export default function ContactSection() {
 
             {/* Business Hours Card */}
             <div className="flex items-start gap-4 rounded-bl-3xl bg-white/95 p-4 shadow ring-1 ring-black/5">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#5F5387] via-primary to-[#3C3063] text-white shadow-md">
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-[#5F5387] via-primary to-primary text-white shadow-md">
                 <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
               </span>
               <div>
@@ -143,7 +143,7 @@ export default function ContactSection() {
 
           {/* ===== Right: Complaint Form ===== */}
           <div className="w-full max-w-md lg:max-w-none">
-            <h3 className="mt-[15px] mb-3 sm:mb-4 text-xl font-[family-name:var(--font-family-amsi-cond-700)] sm:text-2xl font-bold text-orange-400">Register a Complaint</h3>
+            <h3 className="mt-[15px] mb-3 sm:mb-4 text-xl font-family-amsi-cond-700 sm:text-2xl font-bold text-orange-400">Register a Complaint</h3>
             
             <form onSubmit={handleSubmit} className="space-y-4" noValidate>
               {/* Name */}
@@ -207,7 +207,7 @@ export default function ContactSection() {
                 type="submit"
                 disabled={isSubmitting}
                 className={cn(
-                  'w-full rounded-bl-3xl bg-[#F9811E] px-6 py-3.5 font-bold uppercase tracking-wide text-white shadow-lg transition-all hover:shadow-xl hover:brightness-110 focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary disabled:opacity-50',
+                  'w-full rounded-bl-3xl bg-secondary px-6 py-3.5 font-bold uppercase tracking-wide text-white shadow-lg transition-all hover:shadow-xl hover:brightness-110 focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary disabled:opacity-50',
                   submitSuccess && 'bg-green-500'
                 )}
               >

@@ -24,7 +24,7 @@ const HeroStory: React.FC = () => {
         {/* Image Container with Decorative Frame */}
         <div className="relative mb-8 md:mb-12">
           {/* Main Image with Rounded Corners (top-right, bottom-right) */}
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl z-10 ">
+          <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl z-10 ">
             <Image
               src="/images/home/heroStory.webp"
               alt="Happy family enjoying their beautifully floored home"
@@ -50,7 +50,7 @@ const HeroStory: React.FC = () => {
           <p
             className={clsx(
               'text-center text-lg leading-relaxed',
-              "font-['Amsi_Pro_Condensed_400']",
+              "font-family'Amsi_Pro_Condensed_400']",
               'sm:text-xl md:text-2xl lg:text-3xl lg:leading-relaxed'
             )}
             style={{ color: 'var(--color-primary)' }}
@@ -64,7 +64,7 @@ const HeroStory: React.FC = () => {
               href="/about"
               className={clsx(
                 'group inline-flex items-center justify-center gap-3 px-4 py-3 text-lg font-semibold transition-all duration-300',
-                "font-['Amsi_Pro_Condensed_600']",
+                "font-family-amsi-cond-600",
                 // 'bg-gradient-to-br from-[#5F5387] via-primary to-[#3C3063]',
                 'bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/40',
                 'w-full rounded-bl-3xl sm:rounded-bl-4xl shadow-lg hover:shadow-xl',

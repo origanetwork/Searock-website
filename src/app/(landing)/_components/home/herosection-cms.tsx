@@ -40,7 +40,7 @@ const HeroSectionCMS = async () => {
           className="hidden sm:block object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-transparent to-transparent sm:from-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-white/70 via-transparent to-transparent sm:from-transparent" />
       </div>
 
       <div className="z-10 mx-auto flex w-full max-w-xl flex-col items-center justify-center px-4 pt-2 pb-12 text-center sm:max-w-2xl sm:px-6 sm:pt-12 md:px-8 lg:pt-16 lg:pb-20">
@@ -74,13 +74,13 @@ const HeroSectionCMS = async () => {
               "sm:text-3xl md:mb-5 md:text-4xl lg:mb-12 lg:text-5xl"
             )}
           >
-            <span className="font-['Amsi_Pro_Condensed_600']" style={{ color: 'var(--color-primary)' }}>
+            <span className="font-family-amsi-cond-600" style={{ color: 'var(--color-primary)' }}>
               Your{' '}
             </span>
-            <span className="font-['Amsi_Pro_Condensed_700']" style={{ color: 'var(--color-secondary)' }}>
+            <span className="font-family-amsi-cond-700" style={{ color: 'var(--color-secondary)' }}>
               Flooring
             </span>
-            <span className="font-['Amsi_Pro_Condensed_600']" style={{ color: 'var(--color-primary)' }}>
+            <span className="font-family-amsi-cond-600" style={{ color: 'var(--color-primary)' }}>
               {' '}Partner
             </span>
           </p>
@@ -89,7 +89,7 @@ const HeroSectionCMS = async () => {
             href="/contact#location-heading"
             className={clsx(
               'group inline-flex items-center justify-center gap-3 px-4 py-3 text-lg font-semibold transition-all duration-300',
-              "font-['Amsi_Pro_Condensed_600']",
+              "font-family-amsi-cond-600",
               'bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/40',
               'w-full rounded-bl-3xl shadow-lg hover:shadow-xl',
               'focus:outline-none focus:ring-4 focus:ring-white/30',
@@ -109,7 +109,7 @@ const HeroSectionCMS = async () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            <span className="font-['Amsi_Pro_Condensed_700']">Locate Store</span>
+            <span className="font-family-amsi-cond-700">Locate Store</span>
           </a>
         </div>
       </div>

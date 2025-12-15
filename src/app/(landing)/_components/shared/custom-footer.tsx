@@ -4,7 +4,7 @@ import Footer from "./footer"
 const CustomFooter : React.FC = () => {
     return (
       <>
-        <section className="bg-gradient-to-br from-primary via-[#3C3063] to-[#54438B]">
+        <section className="bg-linear-to-br from-primary via-primary to-primary-600">
           {/* <ContactSection /> */}
           <Footer />
         </section>

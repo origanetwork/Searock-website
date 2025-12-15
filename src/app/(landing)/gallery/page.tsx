@@ -31,7 +31,7 @@ export default async function GalleryPage() {
     <main className="flex flex-col min-h-screen bg-white">
       <section className="w-full bg-primary text-white">
         <div className="mx-auto max-w-screen-sm px-6 py-10 md:py-16">
-          <h1 className="text-center font-['Amsi_Pro_Condensed_700'] text-4xl md:text-5xl lg:text-6xl">Explore our Showroom</h1>
+          <h1 className="text-center font-family-amsi-cond-700 text-4xl md:text-5xl lg:text-6xl">Explore our Showroom</h1>
           <p className="mt-4 text-center text-sm md:text-base lg:text-lg leading-6 opacity-95 max-w-lg mx-auto">
             Get captivated by a stunning collection of images showcasing various subjects in our meticulously curated gallery.
           </p>
@@ -39,7 +39,7 @@ export default async function GalleryPage() {
       </section>
 
       <section className="py-8 md:py-12">
-        <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
             {first.map((img, idx) => (
               <a key={idx} href={`#gallery-${idx}`} className="block">
@@ -109,7 +109,7 @@ export default async function GalleryPage() {
           >
             <a href="#" className="absolute inset-0 bg-black/60 z-0" aria-label="Close"></a>
             <div className="relative z-10 w-full max-w-6xl">
-              <div className="relative w-full h-[70vh] bg-white rounded-bl-[2rem] overflow-hidden shadow-2xl flex items-center justify-center">
+              <div className="relative w-full h-[70vh] bg-white rounded-bl-4xl overflow-hidden shadow-2xl flex items-center justify-center">
                 <Image
                   src={img.src}
                   alt={img.alt}
