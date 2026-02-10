@@ -146,15 +146,15 @@ const tiles = [
       "Stylish, durable tiles for every space—classic to contemporary.",
     images: [
       {
-        src: '/images/collections/tile-1.webp',
+        src: '/images/collections/tiles-1.png',
         alt: 'Modern minimalist interior with wooden flooring and white walls'
       },
       {
-        src: '/images/collections/tile-2.webp',
+        src: '/images/collections/tiles-2.png',
         alt: 'Colorful geometric patterned tiles in hotel corridor'
       },
       {
-        src: '/images/collections/tile-3.webp',
+        src: '/images/collections/tiles-3.png',
         alt: 'Contemporary white interior with neutral tiled flooring'
       }
     ] as [CollectionImage, CollectionImage, CollectionImage],
@@ -169,19 +169,19 @@ const granites = [
       'Strong, elegant stones designed for long-term use.',
     images: [
       {
-        src: '/images/collections/granites-1.webp',
+        src: '/images/collections/granite-1.png',
         alt: 'Modern minimalist interior with wooden flooring and white walls'
       },
       {
-        src: '/images/collections/granites-2.webp',
+        src: '/images/collections/granite-2.png',
         alt: 'Colorful geometric patterned tiles in hotel corridor'
       },
       {
-        src: '/images/collections/granites-3.webp',
+        src: '/images/collections/granite-3.png',
         alt: 'Contemporary white interior with neutral tiled flooring'
       }
     ] as [CollectionImage, CollectionImage, CollectionImage],
-    ctaHref: '/collections/tiles'
+    ctaHref: '/collections/granites'
   }
   // Add more collections here (Flooring, Granite, Bathware, etc.)
 ];
@@ -192,19 +192,19 @@ const bathwares = [
       'Modern, reliable bathware that adds comfort to everyday living.',
     images: [
       {
-        src: '/images/collections/bathware-1.webp',
+        src: '/images/collections/sanitray-1.png',
         alt: 'Modern minimalist interior with wooden flooring and white walls'
       },
       {
-        src: '/images/collections/bathware-2.webp',
+        src: '/images/collections/sanitray-2.png',
         alt: 'Colorful geometric patterned tiles in hotel corridor'
       },
       {
-        src: '/images/collections/bathware-3.webp',
+        src: '/images/collections/sanitray-3.png',
         alt: 'Contemporary white interior with neutral tiled flooring'
       }
     ] as [CollectionImage, CollectionImage, CollectionImage],
-    ctaHref: '/collections/tiles'
+    ctaHref: '/collections/sanitary'
   }
   // Add more collections here (Flooring, Granite, Bathware, etc.)
 ];

@@ -26,7 +26,7 @@ const HeroStory: React.FC = () => {
           {/* Main Image with Rounded Corners (top-right, bottom-right) */}
           <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl z-10 ">
             <Image
-              src="/images/home/heroStory.webp"
+              src="/images/home/family.png"
               alt="Happy family enjoying their beautifully floored home"
               fill
               quality={90}
