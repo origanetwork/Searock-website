@@ -20,21 +20,21 @@ const productCategories: ProductCategory[] = [
   {
     name: 'Granites',
     description: 'Elegant and durable granite solutions that bring natural stone beauty to your spaces.',
-    imagePath: '/images/products/granite.jpg', // Placeholder - Update with your actual image path
+    imagePath: '/images/products/product-granite.png', // Placeholder - Update with your actual image path
     features: ['Highly durable', 'Heat resistant', 'Luxurious finish'],
     link: '/products/granites',
   },
   {
     name: 'Tiles',
     description: 'Premium quality tiles that combine beauty with durability. Perfect for floors, walls, and any surface.',
-    imagePath: '/images/products/tile.jpg', // Placeholder - Update with your actual image path
+    imagePath: '/images/products/product-tile.png', // Placeholder - Update with your actual image path
     features: ['Water resistant', 'Easy maintenance', 'Wide variety of designs'],
     link: '/products/tiles',
   },
   {
     name: 'Bathware',
     description: 'Complete bathroom solutions including sanitaryware, fittings, and accessories for modern bathrooms.',
-    imagePath: '/images/products/bath.jpg', // Placeholder - Update with your actual image path
+    imagePath: '/images/products/product-sanitary.png', // Placeholder - Update with your actual image path
     features: ['Premium quality', 'Water efficient', 'Contemporary designs'],
     link: '/products/bathware',
   },
