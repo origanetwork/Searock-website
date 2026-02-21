@@ -65,7 +65,7 @@ export default function AboutPage() {
             <div className="mx-auto mb-2 flex h-6 w-6 items-center justify-center text-secondary">
               <TbTargetArrow className="h-6 w-6" />
             </div>
-            <h2 className="text-center font-family-amsi-cond-7002xl md:text-3xl lg:text-4xl text-primary">Our Purpose</h2>
+            <h2 className="text-center font-family-amsi-cond-700 2xl md:text-3xl lg:text-4xl text-primary">Our Purpose</h2>
             <p className="mt-2 text-center text-sm md:text-base lg:text-lg text-slate-700">
               Our mission is to provide sustainable, design-forward flooring solutions that improve everyday living. We simplify decisions with honest guidance and curated collections for every budget and style.
             </p>
