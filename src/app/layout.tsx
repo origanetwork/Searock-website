@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Preloader from "./(landing)/_components/shared/preloader";
 
 export const metadata: Metadata = {
   title: "Searock Web",
@@ -37,6 +38,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/images/home/searock-white.png" type="image/png" />
       </head>
       <body className="antialiased">
+        <Preloader />
         {children}
       </body>
     </html>
