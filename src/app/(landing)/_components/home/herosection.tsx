@@ -26,7 +26,7 @@ const HeroSection: React.FC = () => {
           className="hidden sm:block object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-linear-to-t from-white/70 via-transparent to-transparent sm:from-transparent" />
+        {/* <div className="absolute inset-0 bg-linear-to-t from-white/70 via-transparent to-transparent sm:from-transparent" /> */}
 
       </div>
 
@@ -60,29 +60,26 @@ const HeroSection: React.FC = () => {
           </span>
         </h1>
         
-        {/* Bottom group: Tagline + CTA, anchored to bottom on mobile */}
-        <div className="absolute inset-x-0 bottom-2 z-10 mx-auto w-full max-w-xl px-4 sm:static sm:inset-auto sm:bottom-auto sm:mt-8 sm:px-6 md:px-8">
         {/* Tagline - "Your Flooring Partner" with orange highlight on "Flooring" */}
-        <p 
+        <p
           className={clsx(
-            "mb-3 text-xl font-semibold leading-relaxed tracking-wide",
-            "sm:text-3xl md:mb-5 md:text-4xl lg:mb-12 lg:text-5xl"
+            "text-xl font-semibold leading-relaxed tracking-wide",
+            "sm:text-3xl md:text-4xl lg:text-5xl"
           )}
         >
-          <span 
+          <span
             className="font-family-amsi-cond-600"
             style={{ color: 'var(--color-white)' }}
           >
             Your{' '}
           </span>
-          {/* "Flooring" highlighted in secondary orange color */}
-          <span 
+          <span
             className="font-family-amsi-cond-700"
             style={{ color: 'var(--color-secondary)' }}
           >
             Flooring
           </span>
-          <span 
+          <span
             className="font-family-amsi-cond-600"
             style={{ color: 'var(--color-white)' }}
           >
@@ -90,6 +87,8 @@ const HeroSection: React.FC = () => {
           </span>
         </p>
 
+        {/* CTA Button - anchored to bottom on mobile */}
+        <div className="absolute inset-x-0 bottom-2 z-10 mx-auto w-full max-w-xl px-4 sm:static sm:inset-auto sm:bottom-auto sm:mt-8 sm:px-6 md:px-8">
         {/* CTA Button - "Locate Store" with location icon */}
         <a
           href="/contact#location-heading"
