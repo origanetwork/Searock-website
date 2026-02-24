@@ -11,7 +11,7 @@ const HeroSection: React.FC = () => {
       {/* Background Image with Overlay - Optimized with next/image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero/hero-mobile.png"
+          src="/images/hero/mobile-banner.png"
           alt="Beautiful modern living room interior"
           fill
           priority
@@ -19,7 +19,7 @@ const HeroSection: React.FC = () => {
           sizes="100vw"
         />
         <Image
-          src="/images/hero/hero-desktop.png"
+          src="/images/hero/web-banner.png"
           alt="Beautiful modern living room interior"
           fill
           priority
@@ -39,10 +39,10 @@ const HeroSection: React.FC = () => {
           <span 
             className={clsx(
               "font-family-amsi-cond-700 text-5xl font-extrabold leading-[1.1] tracking-normal",
-              "text-primary",
+              "text-white",
               "sm:text-6xl sm:leading-[1.05] md:text-7xl md:leading-[1.05] lg:text-8xl lg:leading-[1.03]"
             )}
-            style={{ color: 'var(--color-primary)' }} // Fallback to CSS variable
+            style={{ color: 'var(--color-white)' }} // Fallback to CSS variable
           >
             Bring life
           </span>
@@ -54,7 +54,7 @@ const HeroSection: React.FC = () => {
               "text-primary ",
               "sm:text-6xl sm:leading-[1.05] md:text-7xl md:leading-[1.05] lg:text-8xl lg:leading-[1.03]"
             )}
-            style={{ color: 'var(--color-primary)' }}
+            style={{ color: 'var(--color-white)' }}
           >
             to your home
           </span>
@@ -71,7 +71,7 @@ const HeroSection: React.FC = () => {
         >
           <span 
             className="font-family-amsi-cond-600"
-            style={{ color: 'var(--color-primary)' }}
+            style={{ color: 'var(--color-white)' }}
           >
             Your{' '}
           </span>
@@ -84,7 +84,7 @@ const HeroSection: React.FC = () => {
           </span>
           <span 
             className="font-family-amsi-cond-600"
-            style={{ color: 'var(--color-primary)' }}
+            style={{ color: 'var(--color-white)' }}
           >
             {' '}Partner
           </span>

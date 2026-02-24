@@ -103,7 +103,7 @@ export default function Footer() {
 
           {/* Social Media Links */}
           <div className="flex flex-col items-center space-y-2 md:items-end">
-            <p className="text-center font-family-amsi-cond-600 text-2xl uppercase tracking-wide sm:text-base md:text-right">
+            <p className="text-center font-family-amsi-cond-600 text-2xl uppercase tracking-wider sm:text-base md:text-right">
               Follow Us
             </p>
             <div className="flex items-center justify-center gap-3 md:gap-4">
@@ -113,7 +113,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white/30 bg-white/10 text-white backdrop-blur-sm transition-all hover:border-secondary hover:bg-secondary hover:text-white focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary"
+                  className="flex h-10 w-10 items-center justify-center tracking-wider rounded-full border-2 border-white/30 bg-white/10 text-white backdrop-blur-sm transition-all hover:border-secondary hover:bg-secondary hover:text-white focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary"
                   aria-label={`Follow us on ${social.name}`}
                 >
                   {social.icon}
@@ -127,7 +127,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 border-t border-white/20 pt-8 sm:grid-cols-2 lg:grid-cols-3 sm:gap-12">
           {/* Menu */}
           <div className="col-span-1">
-            <h4 className="mb-4 font-family-amsi-cond-700 text-base font-bold uppercase tracking-wide sm:text-lg">
+            <h4 className="mb-4 font-family-amsi-cond-700 text-base font-bold uppercase tracking-widerr sm:text-lg">
               Menu
             </h4>
             <ul className="space-y-3" role="list">
@@ -135,7 +135,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="font-family-amsi-cond-400 text-sm text-white/80 transition-colors hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary sm:text-base"
+                    className="font-family-amsi-cond-400 text-sm tracking-wider text-white/80 transition-colors hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary sm:text-base"
                   >
                     {link.name}
                   </Link>
@@ -146,7 +146,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="col-span-1">
-            <h4 className="mb-4 font-family-amsi-cond-700 text-base font-bold uppercase tracking-wide sm:text-lg">
+            <h4 className="mb-4 font-family-amsi-cond-700 text-base font-bold uppercase tracking-wider sm:text-lg">
               Quick Links
             </h4>
             <ul className="space-y-3" role="list">
@@ -154,7 +154,7 @@ export default function Footer() {
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="inline-block font-family-amsi-cond-400 text-sm text-white/80 transition-colors hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary sm:text-base"
+                    className="inline-block font-family-amsi-cond-400 text-sm tracking-wider text-white/80 transition-colors hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary sm:text-base"
                   >
                     {link.name}
                   </Link>
@@ -163,7 +163,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className="col-span-2 sm:col-span-1 lg:col-span-1">
-            <h4 className="mb-4 font-family-amsi-cond-700 text-base font-bold uppercase tracking-wide sm:text-lg">
+            <h4 className="mb-4 font-family-amsi-cond-700 text-base font-bold uppercase tracking-wider sm:text-lg">
               Contact
             </h4>
             <ul className="space-y-3" role="list">
@@ -173,7 +173,7 @@ export default function Footer() {
                     <path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
                   </svg>
-                  <p className="font-family-amsi-cond-400 text-sm sm:text-base">
+                  <p className="font-family-amsi-cond-400 text-sm tracking-wider sm:text-base">
                     Panambi, Near EMS Hospital,
                     <br />
                     Perinthalmanna, Kerala -679332.
@@ -183,7 +183,7 @@ export default function Footer() {
               <li className="flex justify-start">
                 <a
                   href="tel:+916238811940"
-                  className="inline-flex items-center gap-3 font-family-amsi-cond-400 text-sm text-white/80 transition-colors hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary sm:text-base"
+                  className="inline-flex items-center gap-3 font-family-amsi-cond-400 tracking-wider text-sm text-white/80 transition-colors hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary sm:text-base"
                 >
                   <svg className="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.86.33 1.7.62 2.5a2 2 0 0 1-.45 2.11L8 9a16 16 0 0 0 7 7l.67-1.28a2 2 0 0 1 2.11-.45c.8.29 1.64.5 2.5.62A2 2 0 0 1 22 16.92z"></path>
@@ -194,7 +194,7 @@ export default function Footer() {
               <li className="flex justify-start">
                 <a
                   href="mailto:searocktilegallery@gmail.com"
-                  className="inline-flex items-center gap-3 font-family-amsi-cond-400 text-sm text-white/80 transition-colors hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary sm:text-base"
+                  className="inline-flex items-center gap-3 font-family-amsi-cond-400 tracking-wider text-sm text-white/80 transition-colors hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary sm:text-base"
                 >
                   <svg className="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
@@ -209,7 +209,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-white/20 pt-6 text-center">
-          <p className="font-family-amsi-cond-400 text-xs text-white/60 sm:text-sm">
+          <p className="font-family-amsi-cond-400 text-xs text-white/60 sm:text-sm tracking-wider">
             @ 2025 Searock , All  rights  reserved
        Design & Developed by <a href="https://www.origanetworks.com/" className='text-md transition-colors hover:text-orange-400'> Origa Networks</a>
           </p>

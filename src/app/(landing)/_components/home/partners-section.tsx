@@ -239,7 +239,7 @@ const PartnersSection: React.FC = () => {
           {/* Subtitle - Description */}
           <p
             className={clsx(
-              'mx-auto max-w-3xl text-lg leading-relaxed text-white/80',
+              'mx-auto max-w-3xl text-lg leading-relaxed tracking-wider text-white/80',
               "font-family-amsi-cond-400",
               'sm:text-lg md:text-xl lg:text-2xl'
             )}
