@@ -45,7 +45,7 @@ export default function Preloader() {
         y: '-100%',
         duration: 0.75,
         ease: 'power3.inOut',
-        onComplete: () => gsap.set(overlay, { autoAlpha: 0 }),
+        onComplete: () => { gsap.set(overlay, { autoAlpha: 0 }); },
       });
     }, holdDuration * 1000);
 
