@@ -35,7 +35,7 @@ const HeroAbout: React.FC = () => {
 
     return (
     <section
-        className="relative flex min-h-[calc(75svh)] w-full items-center justify-center overflow-hidden py-16 md:py-20 lg:py-24"
+        className="relative flex w-full items-center justify-center overflow-hidden py-16 md:py-20 lg:py-24"
         aria-label="About Searock section"
     >
         {/* gradiant overlay */}
