@@ -11,7 +11,7 @@ const HeroSection: React.FC = () => {
       {/* Background Image with Overlay - Optimized with next/image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero/mobile-banner.png"
+          src="/images/hero/mobile-hero.jpeg"
           alt="Beautiful modern living room interior"
           fill
           priority
