@@ -5,7 +5,7 @@ import { clsx } from 'clsx';
 const HeroSection: React.FC = () => {
   return (
     <section 
-      className="relative flex w-full items-start sm:items-center justify-center overflow-hidden min-h-[80svh] sm:min-h-screen"
+      className="relative flex w-full items-start sm:items-center justify-center overflow-hidden min-h-[70svh] sm:min-h-screen"
       aria-label="Hero section"
     >
       {/* Background Image with Overlay - Optimized with next/image */}
@@ -88,7 +88,7 @@ const HeroSection: React.FC = () => {
         </p>
 
         {/* CTA Button - anchored to bottom on mobile */}
-        <div className="absolute inset-x-0 bottom-2 z-10 mx-auto w-full max-w-xl px-4 sm:static sm:inset-auto sm:bottom-auto sm:mt-8 sm:px-6 md:px-8">
+        <div className="absolute inset-x-0 bottom-2 z-10 mx-auto w-full max-w-xl px-4 sm:static sm:inset-auto sm:bottom-auto sm:mt-8 sm:px-6 md:px-8 mb-2">
         {/* CTA Button - "Locate Store" with location icon */}
         <a
           href="/contact#location-heading"
