@@ -5,7 +5,7 @@ import { clsx } from 'clsx';
 const HeroSection: React.FC = () => {
   return (
     <section
-      className="relative flex w-full items-start sm:items-center justify-center overflow-hidden min-h-[75svh] sm:min-h-screen"
+      className="relative flex w-full items-start sm:items-center justify-center overflow-hidden min-h-[70svh] sm:min-h-screen"
       aria-label="Hero section"
       style={{ WebkitTransform: 'translateZ(0)', transform: 'translateZ(0)' }}
     >
