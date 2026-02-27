@@ -37,6 +37,7 @@ const HeroAbout: React.FC = () => {
     <section
         className="relative flex w-full items-center justify-center overflow-hidden py-16 md:py-20 lg:py-24"
         aria-label="About Searock section"
+        style={{ WebkitTransform: 'translateZ(0)', transform: 'translateZ(0)' }}
     >
         {/* gradiant overlay */}
         <div className="absolute inset-0 z-10 bg-linear-to-b from-white/90 via-white/50 to-white/90"></div>
