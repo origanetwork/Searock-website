@@ -5,7 +5,7 @@ import { TbTargetArrow } from "react-icons/tb";
 export const metadata = {
   title: "About • Searock",
   description:
-    "About Searock – 30+ years of transforming homes with sustainable flooring, natural stone, and bathware.",
+    "About Searock – 15+ years of transforming homes with sustainable flooring, natural stone, and bathware.",
 };
 
 export default function AboutPage() {
@@ -15,7 +15,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-screen-sm px-6 py-10">
           <h1 className="text-center font-family-amsi-cond-700 text-4xl md:text-5xl lg:text-6xl">About us</h1>
           <p className="mt-4 text-center text-sm md:text-base lg:text-lg leading-6 opacity-95">
-            30+ years of transforming homes with sustainable flooring, natural stone, and
+            15+ years of transforming homes with sustainable flooring, natural stone, and
             bathware. We blend friendship, knowledge, and responsibility into every solution.
           </p>
 
@@ -23,7 +23,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-3 items-stretch text-center">
               <div className="flex flex-col">
                 <span className="font-family-amsi-cond-700 text-3xl md:text-4xl lg:text-5xl leading-none">
-                  <span className="text-white">30</span>
+                  <span className="text-white">15</span>
                   <span className="text-white">+</span>
                 </span>
                 <span className="mt-1 text-[10px] md:text-xs lg:text-sm opacity-80">Years of Experience</span>
@@ -97,7 +97,7 @@ export default function AboutPage() {
         <div className="mx-auto mt-10 max-w-screen-sm px-4 py-8">
           <h2 className="text-center font-family-amsi-cond-700 text-2xl md:text-3xl lg:text-4xl">What Makes Us Different</h2>
           <p className="mt-3 text-center text-sm md:text-base lg:text-lg leading-6 opacity-95">
-            For over 30 years, <span className="text-secondary">Searock</span> has been helping
+            For over 15 years, <span className="text-secondary">Searock</span> has been helping
             families create homes that reflect their dreams. With personalized solutions, expert
             guidance, and sustainable products, we bring comfort, beauty, and lasting value to every
             space. Choose <span className="text-secondary">Searock</span> your trusted flooring
