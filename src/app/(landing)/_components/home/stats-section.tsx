@@ -182,7 +182,7 @@ const StatCard: React.FC<StatCardProps> = ({ value, suffix, label, index }) => {
 
 const StatsSection: React.FC = () => {
   const stats = [
-    { value: 30, suffix: '+', label: 'Years experience in caring for home' },
+    { value: 30, suffix: '+', label: 'Years of Home Care Experience' },
     { value: 10000, suffix: '+', label: 'Homes Guided & Supported' },
     { value: 2000, suffix: '+', label: 'Product Options for Every Need' },
     { value: 4.8, suffix: '/5', label: 'Customer Satisfaction Rate' },
